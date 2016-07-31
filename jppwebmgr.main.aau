@@ -1,0 +1,2643 @@
+/*
+
+jppmgr
+	
+*/
+
+
+import win.ui;
+/*DSG{{*/
+mainForm = ..win.form(cls="jppForm";text="12-【聚·拍牌】官方发布-一键拍牌-2015年11月18日";right=861;bottom=646;edge=1;frame=1)
+mainForm.add(
+button={cls="button";text="重启定时器";left=882;top=504;right=957;bottom=538;z=56};
+button10={cls="button";text="全部二次出价";left=458;top=377;right=583;bottom=411;z=90};
+button11={cls="button";text="全部进入登陆页面";left=454;top=258;right=579;bottom=292;z=91};
+button12={cls="button";text="显示选中";left=882;top=545;right=1007;bottom=579;z=93};
+button13={cls="button";text="选中进入登陆页面";left=448;top=19;right=573;bottom=53;z=94};
+button14={cls="button";text="选中登陆";left=448;top=58;right=573;bottom=92;z=95};
+button15={cls="button";text="选中首次出价";left=448;top=96;right=573;bottom=130;z=96};
+button16={cls="button";text="选中二次出价";left=448;top=135;right=573;bottom=169;z=97};
+button17={cls="button";text="测试全部取验证码";left=459;top=456;right=584;bottom=490;z=102};
+button18={cls="button";text="选中测试验证码";left=449;top=176;right=574;bottom=210;z=103};
+button19={cls="button";text="关闭所有jpp";left=606;top=344;right=731;bottom=378;z=104};
+button2={cls="button";text="重新加载配置";left=959;top=503;right=1039;bottom=537;z=57};
+button20={cls="button";text="打开所有jpp";left=606;top=378;right=731;bottom=411;z=105};
+button21={cls="button";text="关闭所有IE";left=607;top=417;right=732;bottom=451;z=106};
+button22={cls="button";text="打开所有IE";left=609;top=455;right=734;bottom=488;z=107};
+button23={cls="button";text="发布全部配置";left=606;top=232;right=731;bottom=266;z=108};
+button24={cls="button";text="发布全部jpp";left=606;top=268;right=731;bottom=302;z=109};
+button25={cls="button";text="全部打开测试系统";left=733;top=344;right=858;bottom=378;z=110};
+button26={cls="button";text="全部提示框确认";left=458;top=495;right=583;bottom=529;z=111};
+button27={cls="button";text="点击所有浏览提示框";left=611;top=493;right=736;bottom=526;z=112};
+button28={cls="button";text="重启验证码代理";left=309;top=480;right=434;bottom=514;z=113};
+button29={cls="button";text="全部截屏";left=460;top=535;right=585;bottom=569;z=114};
+button3={cls="button";text="启动行情服务";left=609;top=11;right=691;bottom=45;z=72};
+button30={cls="button";text="选中所有";left=710;top=9;right=781;bottom=43;z=115};
+button31={cls="button";text="取消选中所有";left=785;top=9;right=856;bottom=43;z=116};
+button32={cls="button";text="开始停止所有录像";left=605;top=307;right=730;bottom=341;z=117};
+button4={cls="button";text="发送重启定时器及配置命令";left=882;top=586;right=1035;bottom=620;z=73};
+button5={cls="button";text="手动发布最高价";left=740;top=224;right=842;bottom=258;z=81};
+button6={cls="button";text="自动发布最高价";left=739;top=260;right=841;bottom=294;z=82};
+button7={cls="button";text="全部出价";left=458;top=417;right=583;bottom=451;z=87};
+button8={cls="button";text="全部登陆";left=458;top=298;right=583;bottom=332;z=88};
+button9={cls="button";text="全部首次出价";left=458;top=338;right=583;bottom=372;z=89};
+checkbox={cls="checkbox";text="手动验证码";left=1049;top=474;right=1135;bottom=492;z=83};
+checkbox2={cls="checkbox";text="手动提交验证码";left=1052;top=505;right=1160;bottom=523;z=86};
+checklist={cls="checklist";left=208;top=10;right=435;bottom=478;ah=1;bgcolor=16777215;edge=1;items={"1";"2";"3";"4"};z=92};
+combobox2={cls="combobox";left=973;top=473;right=1033;bottom=493;edge=1;items={"jpp";"dmt"};mode="dropdown";z=55};
+edit={cls="edit";left=77;top=315;right=167;bottom=340;edge=1;multiline=1;z=23};
+edit10={cls="edit";text="edit10";left=26;top=125;right=118;bottom=150;edge=1;multiline=1;z=51};
+edit11={cls="edit";text="edit11";left=26;top=149;right=118;bottom=174;edge=1;multiline=1;z=52};
+edit12={cls="edit";text="edit12";left=26;top=173;right=118;bottom=198;edge=1;multiline=1;z=53};
+edit13={cls="edit";text="edit13";left=125;top=369;right=186;bottom=394;edge=1;multiline=1;z=74};
+edit14={cls="edit";text="edit14";left=124;top=400;right=186;bottom=425;edge=1;multiline=1;z=76};
+edit15={cls="edit";text="edit15";left=125;top=428;right=188;bottom=453;edge=1;multiline=1;z=78};
+edit16={cls="edit";text="10000";left=743;top=193;right=835;bottom=218;edge=1;multiline=1;z=80};
+edit2={cls="edit";text="300";left=728;top=62;right=784;bottom=87;edge=1;multiline=1;z=25};
+edit3={cls="edit";left=82;top=247;right=169;bottom=271;edge=1;multiline=1;z=15};
+edit4={cls="edit";text="1000";left=728;top=94;right=784;bottom=118;edge=1;multiline=1;z=27};
+edit5={cls="edit";text="edit5";left=79;top=55;right=176;bottom=80;edge=1;multiline=1;z=31};
+edit6={cls="edit";text="112948";left=728;top=126;right=784;bottom=150;edge=1;multiline=1;z=36};
+edit7={cls="edit";text="112950";left=728;top=158;right=784;bottom=183;edge=1;multiline=1;z=37};
+edit8={cls="edit";text="edit8";left=579;top=597;right=671;bottom=622;edge=1;multiline=1;z=42};
+edit9={cls="edit";text="112954";left=126;top=459;right=185;bottom=484;edge=1;multiline=1;z=45};
+groupbox={cls="groupbox";text="groupbox";left=436;top=2;right=589;bottom=242;edge=1;z=1};
+groupbox10={cls="groupbox";text="groupbox10";left=4;top=215;right=204;bottom=355;edge=1;z=3};
+groupbox11={cls="groupbox";text="groupbox11";left=440;top=242;right=593;bottom=577;edge=1;z=2};
+groupbox2={cls="groupbox";text="groupbox2";left=1016;top=0;right=1184;bottom=128;edge=1;z=7};
+groupbox3={cls="groupbox";text="groupbox3";left=864;top=0;right=1016;bottom=160;edge=1;z=8};
+groupbox4={cls="groupbox";text="groupbox4";left=864;top=160;right=1016;bottom=248;edge=1;z=99};
+groupbox5={cls="groupbox";text="groupbox5";left=1016;top=128;right=1184;bottom=248;edge=1;z=100};
+groupbox6={cls="groupbox";text="groupbox6";left=864;top=248;right=1016;bottom=456;edge=1;z=101};
+groupbox7={cls="groupbox";text="groupbox7";left=1017;top=247;right=1185;bottom=455;edge=1;z=4};
+groupbox8={cls="groupbox";text="groupbox8";left=4;top=3;right=204;bottom=217;edge=1;z=6};
+groupbox9={cls="groupbox";text="groupbox9";left=862;top=455;right=1185;bottom=629;edge=1;z=5};
+hbtn={cls="button";text="H";left=88;top=85;right=117;bottom=119;z=34};
+picturebox2={cls="picturebox";left=64;top=275;right=172;bottom=311;z=21};
+picturebox5={cls="picturebox";left=55;top=13;right=195;bottom=49;z=30};
+picturebox6={cls="picturebox";left=413;top=591;right=553;bottom=627;z=43};
+Qbtn={cls="button";text="Q";left=18;top=85;right=47;bottom=119;z=32};
+radiobutton={cls="radiobutton";text="加300按钮坐标";left=872;top=312;right=970;bottom=329;z=9};
+radiobutton10={cls="radiobutton";text="识别码右下坐标";left=1032;top=160;right=1144;bottom=178;z=29};
+radiobutton11={cls="radiobutton";text="验证码输入坐标";left=1032;top=226;right=1144;bottom=244;z=35};
+radiobutton12={cls="radiobutton";text="最高价左上";left=1032;top=264;right=1144;bottom=282;z=40};
+radiobutton13={cls="radiobutton";text="最高价右下";left=1032;top=288;right=1144;bottom=306;z=41};
+radiobutton14={cls="radiobutton";text="登录用户坐标";left=872;top=16;right=984;bottom=34;z=58};
+radiobutton15={cls="radiobutton";text="登录密码坐标";left=872;top=40;right=984;bottom=58;z=59};
+radiobutton16={cls="radiobutton";text="登录验证码输入坐标";left=872;top=64;right=1008;bottom=82;z=60};
+radiobutton17={cls="radiobutton";text="登录yzm左上坐标";left=872;top=88;right=1008;bottom=104;z=61};
+radiobutton18={cls="radiobutton";text="登录yzm右下坐标";left=872;top=112;right=1008;bottom=130;z=62};
+radiobutton19={cls="radiobutton";text="首次出价输入1坐标";left=872;top=176;right=1008;bottom=194;z=63};
+radiobutton2={cls="radiobutton";text="出价输入框坐标";left=872;top=336;right=976;bottom=355;z=10};
+radiobutton20={cls="radiobutton";text="首次出价输入2坐标";left=872;top=200;right=1008;bottom=218;z=64};
+radiobutton21={cls="radiobutton";text="首次出价按钮坐标";left=872;top=224;right=1008;bottom=242;z=65};
+radiobutton22={cls="radiobutton";text="重登录身份证输入坐标";left=1032;top=16;right=1180;bottom=34;z=66};
+radiobutton23={cls="radiobutton";text="重登陆yzm输入坐标";left=1032;top=37;right=1168;bottom=55;z=67};
+radiobutton24={cls="radiobutton";text="重登录yzm左上坐标";left=1032;top=58;right=1168;bottom=76;z=68};
+radiobutton25={cls="radiobutton";text="重登录yzm左上坐标";left=1032;top=79;right=1168;bottom=97;z=69};
+radiobutton26={cls="radiobutton";text="登录按钮坐标";left=872;top=136;right=1008;bottom=154;z=70};
+radiobutton27={cls="radiobutton";text="重登陆按钮坐标";left=1032;top=100;right=1168;bottom=118;z=71};
+radiobutton28={cls="radiobutton";text="自定义加价输入框坐标";left=872;top=264;right=1021;bottom=282;z=84};
+radiobutton29={cls="radiobutton";text="自定义加价按钮坐标";left=872;top=288;right=1008;bottom=306;z=85};
+radiobutton3={cls="radiobutton";text="提交出价取验证码坐标";left=872;top=360;right=1013;bottom=380;z=11};
+radiobutton4={cls="radiobutton";text="确认出价按钮坐标";left=872;top=384;right=992;bottom=401;z=12};
+radiobutton5={cls="radiobutton";text="取消出价按钮坐标";left=872;top=408;right=984;bottom=428;z=13};
+radiobutton6={cls="radiobutton";text="提示框确认按钮坐标";left=872;top=432;right=1001;bottom=452;z=14};
+radiobutton7={cls="radiobutton";text="验证码左上坐标";left=1032;top=182;right=1144;bottom=202;z=19};
+radiobutton8={cls="radiobutton";text="验证码右下坐标";left=1032;top=206;right=1132;bottom=222;z=20};
+radiobutton9={cls="radiobutton";text="识别码左上坐标";left=1032;top=136;right=1144;bottom=156;z=28};
+richedit={cls="richedit";text="
+【聚·拍牌】-一键快捷出价，使用帮助：
+
+F1： 当前最高价（默认）再加300并提交申请验证码
+F2： 取消输入验证码
+F3： 确认提交验证码
+F4： 提示框确认
+F5： 价格加100
+F6： 当前最高价（默认）再加1000并提交申请验证码
+F7： 自动识别并输入验证码
+F8： 识别码计算
+
+关于【聚·拍牌】
+以互联网+为背景，创新推出众筹拍牌的模式！
+尽显【人人为我，我为人人】的情怀！！\res
+
+小伙伴们快来一起击碎久拍不中的魔咒吧！！！
+向高成本拍牌说NO！！！！
+
+聚拍牌官方发布：
+软件及相关版权归【聚·拍牌】所有，违者必究！";left=14;top=508;right=306;bottom=552;edge=1;link=1;multiline=1;z=17};
+static={cls="static";text="验证码";left=18;top=287;right=106;bottom=303;transparent=1;z=18};
+static11={cls="static";text="出价开始时间";left=648;top=135;right=744;bottom=151;transparent=1;z=38};
+static12={cls="static";text="出价结束时间";left=648;top=166;right=736;bottom=182;transparent=1;z=39};
+static13={cls="static";text="最终出价前
+尝试取验证码时间";left=13;top=457;right=127;bottom=490;transparent=1;z=44};
+static14={cls="static";text="识别码结果";left=10;top=61;right=83;bottom=77;transparent=1;z=46};
+static15={cls="static";text="识别最高价";left=329;top=519;right=402;bottom=535;transparent=1;z=47};
+static16={cls="static";text="Q";left=10;top=133;right=24;bottom=149;transparent=1;z=48};
+static17={cls="static";text="Z";left=10;top=157;right=24;bottom=175;transparent=1;z=49};
+static18={cls="static";text="H";left=10;top=181;right=27;bottom=197;transparent=1;z=50};
+static19={cls="static";text="验证码识别方式";left=882;top=477;right=972;bottom=491;transparent=1;z=54};
+static2={cls="static";text="当前坐标";left=18;top=255;right=109;bottom=268;transparent=1;z=16};
+static20={cls="static";text="登陆时间";left=51;top=378;right=115;bottom=393;transparent=1;z=75};
+static21={cls="static";text="首次出价时间";left=47;top=403;right=135;bottom=419;transparent=1;z=77};
+static22={cls="static";text="二次出价时间";left=48;top=430;right=136;bottom=451;transparent=1;z=79};
+static3={cls="static";text="识别结果";left=19;top=320;right=74;bottom=336;transparent=1;z=22};
+static4={cls="static";text="F1加价设置";left=648;top=64;right=736;bottom=79;transparent=1;z=24};
+static5={cls="static";text="F6加价设置";left=648;top=99;right=736;bottom=115;transparent=1;z=26};
+static6={cls="static";text="识别码";left=10;top=21;right=48;bottom=37;transparent=1;z=98};
+zbtn={cls="button";text="Z";left=50;top=85;right=79;bottom=119;z=33}
+)
+/*}}*/
+
+var manualYzm = "0"
+var manualBid = "0";
+var isYzmOk  = "0";
+
+var yzmType = "jpp"
+
+
+_Beep = ::Kernel32.api("Beep","int(int,int)"); 
+
+
+
+
+
+mainForm.checkbox.oncommand = function(id,event){
+	//mainForm.msgbox( mainForm.checkbox.text );
+	if mainForm.checkbox.checked {
+		manualYzm = "1"
+	}else {
+		manualYzm = "0"	
+	}
+}
+
+
+mainForm.checkbox2.oncommand = function(id,event){
+	//mainForm.msgbox( mainForm.checkbox.text );
+	if mainForm.checkbox2.checked {
+		manualBid = "1"
+	}else {
+		manualBid = "0"	
+	}
+}
+
+
+mainForm.button6.oncommand = function(id,event){
+	//mainForm.msgbox( mainForm.button6.text );
+	    if (gStopFlag == "0"){
+       		gStopFlag = "1"
+       		mainForm.button6.text = mainForm.button6.text + "停止"
+       	}else {
+       		gStopFlag = "0"
+       		mainForm.button6.text = mainForm.button6.text + "开始"
+       	}
+	
+}
+
+
+mainForm.button5.oncommand = function(id,event){
+	//mainForm.msgbox( mainForm.button5.text );
+	var tmpPrice = mainForm.edit16.text
+	try{
+		var num = tonumber(tmpPrice)
+		num = num +100
+		mainForm.edit16.text = tostring(num)
+	}
+	catch(e){
+		
+	}	
+	
+}
+
+
+
+
+
+// log module
+var tm = time.now();
+tm.format="%Y%m%d";
+var today = tostring(tm)	
+var filename = "/"+today+"-jppweb"+".log"
+
+xfile = io.open(filename,"a+");
+xfile.write("log start...",'\n');
+xfile.flush();
+
+
+xLog = function(logstr){
+	var localtime = time.now()
+	localtime.format="%H:%M:%S";
+	var slocaltime = tostring(localtime)
+	xfile.write(slocaltime, logstr ,'\n');
+	..io.print(slocaltime, logstr ,'\n');
+	//xfile.flush();	
+}
+
+xLogFlush = function(){
+	xfile.flush();
+}
+
+mainForm.button4.oncommand = function(id,event){
+	//mainForm.msgbox( mainForm.button4.text );
+	responder.sendMsg("preload")
+	//..io.print(666, responder.sendMsg("preload"))
+}
+
+import thread.table; 
+
+subThreadTable = thread.table("subPrice")	
+
+getSubLastPrice = function(){
+	return subThreadTable.lastPrice; 
+}
+
+io.open()
+
+import cfgTable
+isCheckAuth = "0"
+autoKeyEnable = true
+
+mainForm.combobox2.oncommand = function(id,event){
+	//mainForm.msgbox( mainForm.combobox2.selText );
+	yzmType = mainForm.combobox2.selText
+}
+
+import time	
+import time.ntp
+
+// 加载 打码兔 dll
+var dll = raw.loadDll( "\jppweb.dll" );  // 打码兔
+jppDecodeByImg = dll.api( "D2File","int (string id, string name, string pwd, string file, int timeout, int type, string vcode)", "stdcall" ); 
+gcode = "***************************************************************************************" 
+gPrice = "90000"
+
+//打码兔 从本地图片	识别 6位数字 
+jppDecode6 = function(imgPath){
+	
+	gcode = "***************************************************************************************" 
+	try{
+		err = jppDecodeByImg("d5d65fa8b386642d778055207eb09bf3",  "kaka21", "!@#$qwer", 
+ 		imgPath, 
+ 		30,  6,  gcode)	
+	}
+	catch(e){
+		
+	}
+ 		
+	if (err < 0){
+		//io.print("err", err)	
+	}
+	
+	return gcode, err
+}
+
+
+//打码兔， 从本地图片识别 4位数字
+jppDecode4 = function(imgPath){
+	
+	gcode = "***************************************************************************************" 
+	try{
+		err = jppDecodeByImg("d5d65fa8b386642d778055207eb09bf3",  "kaka21", "!@#$qwer", 
+ 		imgPath, 
+ 		15,  4,  gcode)	
+	}
+	catch(e){
+		
+	}
+ 		
+	if (err < 0){
+		//io.print("err", err)	
+	}
+	
+	return gcode, err
+}
+
+gcodeTest = "***************************************************************************************"
+
+jppDecode6Test = function(imgPath){
+	
+	gcodeTest = "***************************************************************************************"
+	try{
+		errTest = jppDecodeByImg("d5d65fa8b386642d778055207eb09bf3",  "kaka21", "!@#$qwer", 
+ 		imgPath, 
+ 		20,  6,  gcodeTest)	
+	}
+	catch(e){
+		
+	}
+	
+ 		
+	if (errTest < 0){
+		//io.print("errTest", errTest)	
+	}
+	
+	return gcodeTest, errTest
+}
+
+//加载优优DLL
+var dllUu = raw.loadDll("\jppwebUu.dll")
+//将DLL内部函数 setsoftinfo 定义到本语言
+jppDecodeByImgUuSoft=dllUu.api("uu_setSoftInfoA","void(int softid,string skey)", "stdcall")
+//将DLL内部函数 login 定义到本语言
+jppDecodeByImgUuLogin=dllUu.api("uu_loginA","int(string username,string password )" , "stdcall")
+//载入DLL内部函数  uu_easyRecognizeFileA
+jppDecodeByImgUuFile=dllUu.api("uu_easyRecognizeFileA","int(int nSoftID, string lpSoftKey, string lpUserName, string lpPassword, string lpPicPath, int nCodeType, string pCodeResult)", "stdcall")
+//载入DLL内部函数  uu_easyRecognizeFileAuu_recognizeByCodeTypeAndPathA
+jppDecodeByImgUuTypeFile=dllUu.api("uu_recognizeByCodeTypeAndPathA","int(string lpPicPath, int nCodeType, string& pCodeResult)", "stdcall")
+jppDecodeByImgUuTypeFileScreen=dllUu.api("uu_recognizeScreenByCodeTypeA","int(int x, int y ,int w ,int h, int nCodeType, string& pCodeResult)", "stdcall")
+
+//初始化 uu dll
+//jppDecodeByImgUuSoft(107384, "120bd19922104811a9db710e2a67acc7")
+//userid=jppDecodeByImgUuLogin("kaka21uu","!@#$qwer") 
+
+
+// 优优云 从本地图片 识别 6位数字
+jppDecode6uu = function(imgPath){
+	gcode = "***********************************************************************" 
+	err, gcode=jppDecodeByImgUuTypeFile(imgPath,4006,gcode)	//调用识别函数		
+	i = string.indexOf(gcode,"_")
+	gcode = string.sub(gcode,i+1,i+6)	
+	return gcode, err
+}
+
+// 优优云 从截屏 识别 6位数字
+jppDecode6uuScreen = function(x, y, w, h){
+	gcode = "***********************************************************************" 
+	err, gcode=jppDecodeByImgUuTypeFileScreen(x, y, w, h,4006,gcode)	//μ÷ó?ê?±eoˉêy		
+	i = string.indexOf(gcode,"_")
+	gcode = string.sub(gcode,i+1,i+6)	
+	return gcode, err
+}
+
+
+
+
+//从本地图片，截取部分图片并保存文件
+//GDI+ 图像剪切
+
+import snapImg
+
+// snapImg.snapImgRectFromImgFile("D:\jppweb\imgcode6.jpg", "D:\jppweb\imgcode4.jpg", "q")
+
+//	import process;
+//	process.explore_select( "D:\jppweb\imgcode4.jpg")
+
+
+vcode="***********************************************************************"	//申请一点空间,大概能放下比识别结果长点
+codeid = 0
+
+
+// 配置信息模块
+import fsys.ini;
+
+ini=fsys.ini("\cfg.ini")
+secSys = ini.getSection("系统信息")
+
+//个性配置，根据ip，取得自己配置
+ipSys = ini.getSection("ip")
+
+// 获取clientIp
+clientIp = cfgTable.getClientIp()
+//cfgTable.splitIpCfgStr(clientCfgByIp)	
+
+..io.print("clientIp", clientIp)
+
+
+loadListFromIni = function(){
+	mainForm.checklist.items = ini.readKeys("clientCfgByIp")
+}
+
+
+checkListAll = function(){
+
+
+	for hItem in mainForm.checklist.each(){
+
+		mainForm.checklist.setChecked(hItem, 1)
+		//mainForm.checklist.se
+		
+	}
+	
+}
+
+
+unCheckListAll = function(){
+
+
+	for hItem in mainForm.checklist.each(){
+
+		mainForm.checklist.setChecked(hItem, 0)
+		//mainForm.checklist.se
+		
+	}
+	
+}
+
+mainForm.button30.oncommand = function(id,event){
+	//mainForm.msgbox( mainForm.button30.text );
+	checkListAll()
+	
+}
+
+
+mainForm.button31.oncommand = function(id,event){
+	//mainForm.msgbox( mainForm.button30.text );
+	unCheckListAll()
+	
+}
+
+
+checkListOne = function(listIdTxt){
+
+	
+	for hItem in mainForm.checklist.each(){
+
+		var checkItemTxt = mainForm.checklist.getItemText(hItem,1)
+		
+		if (checkItemTxt == listIdTxt)		
+		{
+			mainForm.checklist.setChecked(hItem, 1)			
+			subThreadTable.recMsgStr51111 = ""
+			
+		}
+		//mainForm.checklist.se
+		
+	}
+	
+}
+
+
+unCheckListOne = function(listIdTxt){
+
+	
+	for hItem in mainForm.checklist.each(){
+
+		var checkItemTxt = mainForm.checklist.getItemText(hItem,1)
+		
+		if (checkItemTxt == listIdTxt)		
+		{
+			mainForm.checklist.setChecked(hItem, 0)			
+			subThreadTable.recMsgStr51111 = ""
+			
+		}
+		//mainForm.checklist.se
+		
+	}
+	
+}
+
+
+startThreadReplySvr = function(){
+
+	import thread
+	import thread.table
+	
+	var  ttab = thread.table("subPrice")
+	
+	ttab.recMsgStr51111 = ""
+	
+	//服务端
+	import zeromq
+	
+	var context = zeromq.context(20)
+	
+	//replay模式socket与客户端的request模式配对使用
+	var responderStr = context.zmq_socket_reply()
+	
+	//var pipe = context.
+	
+	//io.open()
+	..io.print("26-startThreadReplySvr")
+	if( ! responderStr.bind(  "tcp://*:51111") ){ 
+    	..io.print( zeromq.lasterr() );  
+    	return;
+	}
+	..io.print("ThreadReplySvr-服务端已启动")
+	
+	while (1) {
+    	request = zeromq.message();
+    	
+    	..io.print("ThreadReplySvr-waiting...checkList single......")
+    	if( ! responderStr.recvMsg(request) ){
+        	..io.print( zeromq.lasterr() )
+    	}
+    	
+    	/*
+    	rawP = request.getData()  
+    	rawSize = request.getSize()
+    	
+    	import fsys.file
+		aFile =  fsys.file("d:\jppweb\imgcode4.newServer.jpg","w+")
+    	aFile.writeMemory( rawP, rawSize)
+    	aFile.flush()
+    	aFile.close()
+    	*/
+    	
+    	var recMsgStr = request.getString() 
+    	ttab.recMsgStr51111 = recMsgStr
+    	..io.print ("服务端收到消息..checkList single:",request.getString() );
+    	request.close();
+    	
+    	try{
+    		if(recMsgStr != null) and (allBidFlag == "ccmdallsnapscreen") {
+    					
+    		}
+    		elseif(recMsgStr == ""){
+    				
+    		}			
+    	}
+    	catch(e){
+    		
+    	}
+	
+    	//在这里可以添加其他代码
+    	sleep (500);
+    	//..io.print("正在响应")
+	
+    	// 发送消息
+    	reply = zeromq.message("checkList single return"); 
+    	responderStr.sendMsg(reply)
+    	reply.close();
+	
+	
+		
+    	//上面的代码也可以简化为一句,如下:
+    	//responder.send("客户端你好")
+	
+    	//..io.print("响应完毕")
+	}
+	
+	//上面的代码会一直循环不会中断, 
+	//如果使用break语句中断,则执行下面的代码释放资源 
+	responderStr.close(); 
+	context.term();
+}
+
+..io.print(2566, "thread startThreadReplySvr")
+thread.create(startThreadReplySvr)
+
+
+
+loadListFromIni()
+
+var mgrSvrList = {};
+
+getSecListFormChkList = function(){
+ 	//mainForm.checklist.getChecked()
+ 	
+ 	var checkedItems = {}
+	for hItem in mainForm.checklist.each(){
+		var checked = false;
+		checked = mainForm.checklist.getChecked(hItem)	
+		var checkItemTxt = mainForm.checklist.getItemText(hItem,1)
+		
+		if (checked ){
+			table.insert(checkedItems, checkItemTxt)
+		}
+		
+	}
+	
+	return checkedItems; 	
+}
+
+
+
+mainForm.button12.oncommand = function(id,event){
+	//mainForm.msgbox( mainForm.button12.text );	
+	var checkedItems = getSecListFormChkList()	
+	
+	for(k,v in checkedItems){	
+		..io.print(	463, k, v)
+	}	
+}
+
+setVarFromIni = function(){
+	 
+	 ini=fsys.ini("\cfg.ini")
+	 secSys = ini.getSection("系统信息")
+		
+	 xPrice300 = secSys.xPrice300
+	 yPrice300 = secSys.yPrice300
+	
+	
+	 xPriceEdt = secSys.xPriceEdt
+	 yPriceEdt = secSys.yPriceEdt
+	
+	
+	 xPriceBtn = secSys.xPriceBtn
+	 yPriceBtn = secSys.yPriceBtn
+	
+	
+	 xConfirmBtn = secSys.xConfirmBtn
+	 yConfirmBtn = secSys.yConfirmBtn
+	
+	 xCancelBtn = secSys.xCancelBtn
+	 yCancelBtn = secSys.yCancelBtn
+	
+	
+	 xErrorBtn = secSys.xErrorBtn
+	 yErrorBtn = secSys.yErrorBtn
+	
+	 xImgTopBtn = secSys.xImgTopBtn
+	 yImgTopBtn = secSys.yImgTopBtn
+	
+	 xImgBtomBtn = secSys.xImgBtomBtn
+	 yImgBtomBtn = secSys.yImgBtomBtn
+	
+	 xImgTopBtnFlag = secSys.xImgTopBtnFlag
+	 yImgTopBtnFlag = secSys.yImgTopBtnFlag
+	
+	 xImgBtomBtnFlag = secSys.xImgBtomBtnFlag
+	 yImgBtomBtnFlag = secSys.yImgBtomBtnFlag
+	
+	
+	 	xImgTopBtnFlagPrice = secSys.xImgTopBtnFlagPrice
+	 	yImgTopBtnFlagPrice = secSys.yImgTopBtnFlagPrice
+		
+	 	xImgBtomBtnFlagPrice = secSys.xImgBtomBtnFlagPrice
+	 	yImgBtomBtnFlagPrice = secSys.yImgBtomBtnFlagPrice
+	 	
+	// ---	
+	 	xUserEdt = secSys.xUserEdt
+	 	yUserEdt = secSys.yUserEdt
+		
+	 	xPwdEdt = secSys.xPwdEdt
+	 	yPwdEdt = secSys.yPwdEdt
+	 	
+	 	xBtnLogin = secSys.xBtnLogin
+	 	yBtnLogin = secSys.yBtnLogin
+	 	
+	 	xImgLoginEdt = secSys.xImgLoginEdt
+	 	yImgLoginEdt = secSys.yImgLoginEdt	
+	 	
+	 	xImgTopLogin = secSys.xImgTopLogin
+	 	yImgTopLogin = secSys.yImgTopLogin
+		
+	 	xImgBtomBtnLogin = secSys.xImgBtomBtnLogin
+	    yImgBtomBtnLogin = secSys.yImgBtomBtnLogin
+	 	
+	 		 	
+	 	xBidOnce1Edt = secSys.xBidOnce1Edt
+	 	yBidOnce1Edt = secSys.yBidOnce1Edt
+	 	
+	 	xBidOnce2Edt = secSys.xBidOnce2Edt
+	 	yBidOnce2Edt = secSys.yBidOnce2Edt
+	 	
+	 	xBidOnceBtn = secSys.xBidOnceBtn
+	 	yBidOnceBtn = secSys.yBidOnceBtn
+	 
+	 	xIdNoEdt = secSys.xIdNoEdt
+	 	yIdNoEdt = secSys.yIdNoEdt
+	 	
+	 	
+	 	xBtnLogin2 = secSys.xBtnLogin2
+	 	yBtnLogin2 = secSys.yBtnLogin2
+	 	
+	 	
+	 	xImgLogin2Edt = secSys.xImgLogin2Edt
+	 	yImgLogin2Edt = secSys.yImgLogin2Edt	
+	 	
+	 	xImgTopLogin2 = secSys.xImgTopLogin2
+	 	yImgTopLogin2 = secSys.yImgTopLogin2
+		
+	 	xImgBtomBtnLogin2 = secSys.xImgBtomBtnLogin2
+	    yImgBtomBtnLogin2 = secSys.yImgBtomBtnLogin2
+	    
+	   	xCustomAddPriceEdt = secSys.xCustomAddPriceEdt
+	    yCustomAddPriceEdt = secSys.yCustomAddPriceEdt
+	    
+	    xCustomAddPriceBtn = secSys.xCustomAddPriceBtn
+	    yCustomAddPriceBtn = secSys.yCustomAddPriceBtn
+	 	
+	 	
+	 
+	//
+	
+	 qCode = secSys.qCode
+	 zCode = secSys.zCode
+	 hCode = secSys.hCode
+		
+		
+	 xImgEdt = secSys.xImgEdt
+	 yImgEdt = secSys.yImgEdt
+	
+	 f1Price = secSys.f1Price
+	 f6Price = secSys.f6Price 
+	
+	 nowPrice =  secSys.nowPrice
+	
+	 startTimeStr = secSys.startTimeStr
+	 endTimeStr =   secSys.endTimeStr
+	
+	 bidTimeStr =   secSys.bidTimeStr
+	 
+	 
+	 login1TimeStr = secSys.login1TimeStr
+	 bid1TimeStr = secSys.bid1TimeStr
+	 bid2TimeStr = secSys.bid2TimeStr
+	 
+	
+	 // 个性配置
+	 clientCfgByIp = ini.read("clientCfgByIp",clientIp,"null")
+	 user, pwd, idNo, priceAdded, priceBefore, timeLine, ip, imgSvrIp = cfgTable.splitIpCfgStr(clientCfgByIp)
+	 
+	 subThreadTable.ip = ip
+	 subThreadTable.imgSvrIp = imgSvrIp
+	 	
+	 ..io.print(499,"priceSvrIP", subThreadTable.ip) 
+	 ..io.print(499,"imgSvrIp", subThreadTable.imgSvrIp) 
+	 f1Price = priceAdded
+	 bidTimeStr = timeLine
+	 
+	 
+	 
+	 //..io.print(user)
+}
+
+setVarFromIni()
+
+
+
+import zeromq
+
+gLastPrice = "80000"
+gStopFlag = "1"
+openPriceSvr = function(){
+		
+	context = zeromq.context(20)
+	responder = context.zmq_socket_pub() 
+	
+	if( ! responder.bind(  "tcp://*:59999") ){ 
+    	..io.print( zeromq.lasterr() );  
+    	return;
+	}
+	
+
+	//..io.open()
+	while (1) {
+		replyMsgStr = "cTest"
+		//responder.sendMsg(replyMsgStr)
+    	..io.print("waiting cmd order",replyMsgStr)
+    	//replyMsgStr = null
+    	win.delay(3000)
+	}
+	
+	responder.close(); 
+	context.term();	
+}
+
+
+subThreadTable.xLog = xLog
+subThreadTable.xfile = xfile
+
+
+
+threadRecImgReq = function()
+{
+	import thread.table; 
+	//import subPrice
+	var threadReqTab = thread.table("subPrice")
+	
+	
+		
+	var startTime = ""
+	var endTime = ""
+	var costTime = ""
+
+	import console
+	import io
+	import fsys
+	import time
+	import zeromq
+	
+	var requester = null;
+	var context = null;
+	var recvMsg = null;
+	var msg = null;
+	var recvMsg = null;	
+	var hbmsg = zeromq.message("hb")  
+	var hbmsgrecv = zeromq.message()  
+	
+	
+	//threadReq.context = context
+	//threadReq.recvMsg = recvMsg
+	//threadReq.msg = msg
+	//threadReq.recvMsg = recvMsg
+	//threadReq.hbmsg = hbmsg
+	//threadReq.hbmsgrecv = hbmsgrecv
+
+	connect = function(remoteIP){
+		..io.print("StartOpenZeromq...", startTime)
+			
+		context = zeromq.context(1) 
+		requester = context.zmq_socket_request() ;
+		//threadReq.requester = requester
+		//requester.setsockopt(
+		
+		var	nowTime = time.now()
+		nowTime.format="%H%M%S";
+		var nowTimeStr = tostring(nowTime) 
+		
+		if (nowTimeStr <= "112936") or (nowTimeStr >= "113042")
+		{		
+			threadReqTab.threadRecImgFlag = "hb"
+		}
+		
+		if( requester.connect( "tcp://"+remoteIP+":56666" ) ){
+			..io.print("imgSvr connect ok 56666")
+		}
+		
+
+	}	
+	
+	close = function(){
+		msg.close()
+		recvMsg.close()	
+		requester.close()
+		context.term();	
+	}	
+
+	sendHeartBeatMsg = function(){
+		..io.print(41, "imgCli sendHeartBeatMsg")
+		requester.sendMsg(hbmsg)
+		requester.recvMsg(hbmsgrecv);
+	}
+	
+	
+	recImgStr4 = function(remoteIP, imgFile){
+		//..io.open()
+		var resultStr = ""
+		
+		..io.print("")
+		..io.print("")
+		
+		startTime = time.now()
+		startTime.format="%H%M%S";
+		..io.print("startOpenImg...", startTime)
+		
+		endTime = time.now()
+		endTime.format="%H%M%S";
+		
+		var imgFile = io.open(imgFile, "rb");
+		imgFile.seek("set")	// to set seek 0
+		var imgSize = imgFile.size(1) // get size n bytes use param 1
+		
+		var rawImg = ..raw.malloc(imgSize, 0)		// init rawMem 0
+		imgFile.readBuffer(rawImg, imgSize)		// set rawMew by file binary content 
+		imgFile.close()
+		
+		startTime = time.now()
+		startTime.format="%H%M%S";
+		..io.print("imgOpened...", startTime)
+			
+		startTime = time.now()
+		startTime.format="%H%M%S";
+
+		
+		msg = zeromq.message(rawImg, imgSize)
+		
+		requester.sendMsg(msg)
+		//msg.close();
+		
+		startTime = time.now()
+		startTime.format="%H%M%S";
+		..io.print("imgSended...", startTime)
+		..io.print("untilImgSendedCost", tonumber(startTime)-tonumber(endTime))
+		
+		endTime = time.now()
+		endTime.format="%H%M%S";
+		
+		recvMsg = zeromq.message()  
+		requester.recvMsg(recvMsg);  
+		
+		resultStr =  recvMsg.getString() 	
+		io.print ("recvMsg", resultStr);
+		
+		startTime = time.now()
+		startTime.format="%H%M%S";
+		..io.print("imgReceived...", startTime, resultStr)
+		..io.print("untilImgReceivedCost", tonumber(startTime)-tonumber(endTime))
+		
+		..io.print("")
+		..io.print("")
+	
+
+		
+	    return resultStr; 
+	
+	}
+	
+	
+	connect(threadReqTab.imgSvrIp)
+	
+
+	//threadReqTab.threadRecImgFlag = "hb"
+	//var threadFlag = "0"
+	while(true){
+	   if (threadReqTab.threadRecImgFlag = "recimgreq"){
+	   		threadReqTab.threadRecImgFlag = "null"    
+	        threadReqTab.threadRecImgCode4Str = recImgStr4(threadReqTab.imgSvrIp, "D:\jppweb\imgcode4.jpg")	                
+	   }
+	   else if (threadReqTab.threadRecImgFlag = "hb")
+	   {
+	        sendHeartBeatMsg()
+	        sleep(4000)     
+	   }
+	   else if (threadReqTab.threadRecImgFlag = "recon"){
+	        close()
+	        connect(threadReqTab.remoteIP)  
+	   }else {
+	   		..io.print(832, "threadReqTab.threadRecImgFlag", threadReqTab.threadRecImgFlag)
+	   		sleep(300)
+	   		
+	   		var	nowTime = time.now()
+			nowTime.format="%H%M%S";
+			var nowTimeStr = tostring(nowTime) 
+			
+			if (nowTimeStr <= "112936") or (nowTimeStr >= "113042")
+			{		
+				threadReqTab.threadRecImgFlag = "hb"
+			}
+	   		
+	   }	   
+	}
+}
+
+cliReceiveThread = function(){
+			try{
+					import thread.table
+					import zeromq
+					import subPrice
+					
+					var tab = thread.table("subPrice")
+					..io.print(520, tab.ip)
+					subPrice.init(tab.ip)		
+					//io.print("thread")
+					//var xLog = tab.get("xLog")
+					//var xfile = tab.get("xfile")
+					
+					
+					// log module
+					var tm = time.now();
+					tm.format="%Y%m%d";
+					var today = tostring(tm)
+					var filename = "/"+today+"-jppweb-price"+".log"
+					
+					var xfile = io.open(filename,"a+");
+					xfile.write("log start...",'\n');
+					xfile.flush();
+					
+					
+					xLog = function(logstr){
+						var localtime = time.now()
+						localtime.format="%H:%M:%S";
+						var slocaltime = tostring(localtime)
+						xfile.write(slocaltime, logstr ,'\n');
+						//xfile.flush();	
+					}
+					
+					xLogFlush = function(){
+						xfile.flush();
+					}
+
+					while(true){
+						//io.print("thread1")
+						
+						var msg = zeromq.message()
+						subClient = subPrice.getSubClient()
+						var ret = subClient.recvMsg(msg,1/*_ZMQ_NOBLOCK*/);
+						
+						
+						//var ret = subClient.recv()
+						//io.print(ret)
+						
+						if(ret){
+        						var str = ..raw.tostring( msg.getData(),1,msg.getSize())
+        						msg.close();
+        						..io.print("cli-thread", str)	
+        						tab.lastPrice =  str;
+        						xLog("cli-thread"+str)
+        						
+        						
+        						if (str == "preload"){
+        						..io.print(99999, "preload")
+        						} elseif(str == "pallbid") or (str == "palllogin") or 
+        							(str == "palloncebid") or (str == "palltwicebid") or 
+        							(string.indexOf(".",str)>0){
+        						//	..io.print(768, "pallbid")
+        						//	tab.allbid = "1"        
+        							tab.allbid = str								
+        						}
+        						
+        						xLogFlush()
+						}
+						sleep(100)
+					}
+			}
+			catch(e){
+				..io.print("546-cli-recv",e)
+			}	
+}
+
+cliGetLastPrice = function(){
+	import thread.table
+	var tab = thread.table("subPrice")
+	var tmpPriceStr = tab.lastPrice
+	try{
+		var strArr = string.split(tmpPriceStr, "-")
+		tmpPriceStr = strArr[2]			
+	}
+	catch(e){
+		tmpPriceStr = "10000"
+	}
+	
+	return  tmpPriceStr; 
+}
+
+
+CliReceiveDeamonThread = function(){
+	import thread.table
+	var tab = thread.table("subPrice")
+	..io.print(639, "waitAll(tab.cliReceiveThreadHandle) stop")
+	thread.waitAll(tab.cliReceiveThreadHandle)
+	..io.print(641, "waitAll(tab.cliReceiveThreadHandle) restart")
+	tab.cliReceiveThreadHandle, tab.cliReceiveThreadId = thread.create(cliReceiveThread)
+}
+
+//cliReceiveThreadHandle, cliReceiveThreadId = thread.create(cliReceiveThread)
+//subThreadTable.cliReceiveThreadHandle = cliReceiveThreadHandle
+//subThreadTable.cliReceiveThreadId = cliReceiveThreadId
+//thread.create(CliReceiveDeamonThread)
+
+// create img  rec  req  thread 
+//thread.create(threadRecImgReq)
+
+
+
+// 从识别的6位结果中根据需求截取 前 中 后  的 4位返回  ###mod
+getCode4 = function(vcode, vtype){
+	var rCode = vcode
+	
+	// 长度为4 直接返回
+	if string.len(rCode) == 4 {
+		return rCode
+	}
+	else{
+		if (vtype = qCode){
+			rCode = string.sub(vcode, 1, 4)
+			
+		}
+		else if (vtype = zCode){
+			rCode = string.sub(vcode, 2, 5)
+		}
+		else if (vtype = hCode){
+			rCode = string.sub(vcode, 3, 6)
+		}
+	}
+	return  rCode
+}
+
+
+// return  q  z  h
+getCodeQzh = function(vtype){
+	var qzhCode = "q"
+	
+	if (vtype = qCode){
+		qzhCode = "q"
+	}
+	else if (vtype = hCode){
+		qzhCode = "h"
+	}
+	else {  
+		qzhCode = "z"
+	}
+	
+	return  qzhCode
+}
+
+
+
+
+localtime = time.now()
+localtime.format="%H:%M:%S";
+slocaltime = tostring(localtime)
+xfile.write("begin-Code",slocaltime,'\n');
+
+
+
+
+
+// 授权校验模块
+authTime = "20150816"
+try{
+	//netTime = time.ntp.getData("ntp.sjtu.edu.cn").time
+	netTime.format="%Y%m%d";	
+}
+catch(e){
+	if (isCheckAuth=="1"){
+		mainForm.msgboxErr("获取授权失败，请确认网络可以正常连接至 www.alltobid.com")
+		mainForm.close()
+	}
+}
+
+nowTime = time.now()
+nowTime.format="%Y%m%d";
+
+if (tostring(netTime) > tostring(authTime)) {
+	if (isCheckAuth=="1"){
+		mainForm.msgboxErr("当前日期："+tostring(netTime)+"，授权日期为："+authTime+"，当前授权已过期","提示")
+		mainForm.close()
+	}
+}
+
+if (isCheckAuth=="1"){
+	mainForm.msgbox("当前日期："+tostring(netTime)+"，授权日期为："+authTime)
+}
+
+
+
+updateVarCfg2Edt = function(){
+	 mainForm.edit2.text =f1Price
+	 mainForm.edit4.text =f6Price
+	 mainForm.edit6.text =startTimeStr
+	 mainForm.edit7.text =endTimeStr
+	 mainForm.edit9.text =bidTimeStr
+	 
+	 
+	 mainForm.edit10.text =qCode
+	 mainForm.edit11.text =zCode
+	 mainForm.edit12.text =hCode
+	
+	 mainForm.edit13.text =login1TimeStr
+	 mainForm.edit14.text =bid1TimeStr
+	 mainForm.edit15.text =bid2TimeStr 
+	 
+}
+
+
+updateCfg2Var = function(){
+	setVarFromIni()
+	updateVarCfg2Edt()
+}
+
+// 更新配置到界面变量
+updateCfg2Var()
+
+//重新加载配置
+mainForm.button2.oncommand = function(id,event){
+	//mainForm.msgbox( mainForm.button2.text );
+	//setVarFromIni()
+	updateCfg2Var()		
+}
+
+// 更新界面变量到配置
+mainForm.edit2.oncommand = function(id,event){
+	//mainForm.msgbox( mainForm.edit2.text );
+	f1Price = mainForm.edit2.text
+	secSys.f1Price = f1Price
+	secSys.save()
+}
+
+mainForm.edit4.oncommand = function(id,event){
+	//mainForm.msgbox( mainForm.edit4.text );
+	f6Price = mainForm.edit4.text
+	secSys.f6Price = f6Price
+	secSys.save()	
+	
+}
+
+mainForm.edit6.oncommand = function(id,event){
+	//mainForm.msgbox( mainForm.edit6.text );	
+	startTimeStr = mainForm.edit6.text
+	secSys.startTimeStr = startTimeStr
+	secSys.save()		
+}
+
+mainForm.edit7.oncommand = function(id,event){
+	//mainForm.msgbox( mainForm.edit6.text );	
+	endTimeStr = mainForm.edit7.text
+	secSys.endTimeStr = endTimeStr
+	secSys.save()	
+	
+}
+
+mainForm.edit9.oncommand = function(id,event){
+	//mainForm.msgbox( mainForm.edit6.text );	
+	bidTimeStr = mainForm.edit9.text
+	secSys.bidTimeStr = bidTimeStr
+	secSys.save()	
+	
+}
+
+
+mainForm.edit13.oncommand = function(id,event){
+	//mainForm.msgbox( mainForm.edit6.text );	
+	login1TimeStr = mainForm.edit13.text
+	secSys.login1TimeStr = login1TimeStr
+	secSys.save()	
+	
+}
+
+
+mainForm.edit14.oncommand = function(id,event){
+	//mainForm.msgbox( mainForm.edit6.text );	
+	bid1TimeStr = mainForm.edit14.text
+	secSys.bid1TimeStr = bid1TimeStr
+	secSys.save()	
+	
+}
+
+
+mainForm.edit15.oncommand = function(id,event){
+	//mainForm.msgbox( mainForm.edit6.text );	
+	bid2TimeStr = mainForm.edit15.text
+	secSys.bid2TimeStr = bid2TimeStr
+	secSys.save()	
+	
+}
+
+mainForm.hbtn.oncommand = function(id,event){
+	//mainForm.msgbox( mainForm.hbtn.text );
+	hCode = mainForm.edit5.text
+	secSys.hCode = hCode
+	secSys.save()
+	updateVarCfg2Edt()
+}
+
+mainForm.zbtn.oncommand = function(id,event){
+	zCode = mainForm.edit5.text
+	secSys.zCode = zCode
+	secSys.save()
+	updateVarCfg2Edt()
+}
+
+mainForm.Qbtn.oncommand = function(id,event){
+	//mainForm.msgbox( mainForm.Qbtn.text );
+	qCode = mainForm.edit5.text
+	secSys.qCode = qCode
+	secSys.save()
+	updateVarCfg2Edt()
+}
+
+
+
+
+
+
+
+// 键盘钩子
+import key.hook;
+
+hk=key.hook()
+
+// 点击 +300 按钮
+clkAdd300 = function(){
+	import mouse
+	mouse.click(xPrice300, yPrice300,true); 
+}
+
+// 点击 提交出价 按钮， 并移动鼠标到 确认 按钮
+clkBidBtn300 = function(){
+	import mouse
+	mouse.click( xPriceBtn, yPriceBtn,true); 
+	mouse.move( xConfirmBtn, yConfirmBtn,true); 
+}
+
+
+// 点击 确认 按钮
+clkBidConfirm300 = function(){
+	import mouse
+	mouse.click( xConfirmBtn, yConfirmBtn,true); 
+}
+
+// 点击 取消 按钮
+clkBidCancel300 = function(){
+	import mouse
+	mouse.click( xCancelBtn, yCancelBtn,true); 
+}
+
+// 点击提示框 确认 按钮
+clkErrWndBtn300 = function(){
+	import mouse
+	mouse.click( xErrorBtn, yErrorBtn,true); 
+}
+
+//默认出价
+strPrice = 80000
+
+curBidPriceStr = "10000"
+curBidPriceNum = 10000
+
+
+getCurBidPrice = function(stepPrice){
+	import mouse
+	mouse.clickDb(xPriceEdt,yPriceEdt,true)
+	//sleep(50)
+	
+    import key
+    key.combine("CTRL","a")
+    win.delay(20)
+    key.combine("CTRL","c")
+    win.delay(20)
+    
+    
+    import win.clip
+    curBidPriceStr = win.clip.read()    
+ 
+}
+
+// 设置 出价 价格
+setPrice = function(stepPrice){
+	import mouse
+	mouse.clickDb(xPriceEdt,yPriceEdt,true)
+	//sleep(50)
+	
+    import key
+    key.combine("CTRL","a")
+    win.delay(20)
+    key.combine("CTRL","c")
+    win.delay(20)
+    
+    import win.clip
+    strPrice = win.clip.read()
+    nowPrice = strPrice
+    
+    try{
+    	strPrice = tostring(tonumber(strPrice) + stepPrice)
+    }
+    catch(e){
+    	strPrice = 10000
+    }
+    
+	win.clip.write(strPrice)
+	curBidPriceStr = strPrice
+    win.delay(20)
+    //key.pressEx("CTRL","v")
+    mouse.clickDb( xPriceEdt, yPriceEdt,true); 
+    key.combine("CTRL","a")
+    win.delay(20)
+    key.combine("CTRL","v")
+    //key.send(strPrice)
+    win.delay(20)
+}
+
+gCode4 = ""
+setImgCode = function(code4){
+	import mouse
+	mouse.clickDb( xImgEdt, yImgEdt,true); 
+	sleep(50)
+	//mouse.click( xImgEdt, yImgEdt,true); 
+	
+	import key
+	key.combine("CTRL","a")
+	
+	import win.clip
+	win.clip.write(string.sub(code4, 1, 4))
+    //sleep(2000)
+    key.combine("CTRL","v")
+    
+    gCode4 = code4
+    //key.send(string.sub(code4, 1, 4))
+}
+
+gSetImgCode6 = ""
+setImgCode6 = function(code4){
+	import mouse
+	mouse.clickDb( xImgEdt, yImgEdt,true); 
+	sleep(500)
+	//mouse.click( xImgEdt, yImgEdt,true); 
+	
+	import key
+	key.combine("CTRL","a")
+	
+	import win.clip
+	win.clip.write(string.sub(code4, 1, 6))
+    sleep(50)
+    key.combine("CTRL","v")
+    
+    gSetImgCode6 = code4
+    //key.send(string.sub(code4, 1, 4))
+}
+
+var pixLastPrice;
+import com.picture
+import tesseract	
+	
+// 1. 初始化图片识别对象
+var ocr = tesseract.ocr();
+if( 0 != ocr.init("eng","/res" ) ){ //初始化样本语言包 
+	var prefix = win.getenv("TESSDATA_PREFIX");
+	if(!#prefix) prefix = "\lib\tesseract\.res\"
+	error("没有找到样本 " + prefix + "eng.traineddata",2)
+}
+
+//预设字符集可提升识别率，注意要一定在加载样本以后调用此函数
+ocr.setVariable("tessedit_char_whitelist","1234567890");
+
+function getCode6ToImgFile(){
+
+	xImgTopBtn = secSys.xImgTopBtn
+	yImgTopBtn = secSys.yImgTopBtn
+	
+	xImgBtomBtn = secSys.xImgBtomBtn
+	yImgBtomBtn = secSys.yImgBtomBtn
+	
+	
+	xImgTopBtnFlag = secSys.xImgTopBtnFlag
+	yImgTopBtnFlag = secSys.yImgTopBtnFlag
+	
+	xImgBtomBtnFlag = secSys.xImgBtomBtnFlag
+	yImgBtomBtnFlag = secSys.yImgBtomBtnFlag
+	
+	// 截屏前点击下验证码
+	import mouse
+	mouse.click( xImgTopBtn+10, yImgTopBtn+10,true); 
+	
+	win.delay(200)
+	
+	mouse.click(xImgBtomBtn-10, yImgBtomBtn-10, true);
+	win.delay(300)
+	
+	mouse.move(0, 0, true);
+	
+    // 把验证码截屏，保存成本地图片    925, 290    975   310
+	var picLastPrice = com.picture.snap(0, xImgTopBtn,yImgTopBtn , xImgBtomBtn-xImgTopBtn,yImgBtomBtn-yImgTopBtn);
+	//picLastPrice.Type = 1
+	
+	//import gdip
+	//var bmp =  gdip.bitmap(picLastPrice);
+	//bmp.save("D:\jppweb\imgcode6gdip.jpg",100)
+	//bmp.save("D:\jppweb\imgcode6gdip80.jpg",80)
+	picLastPrice.Save("D:\jppweb\imgcode6.jpg");		
+
+}
+
+
+//getCode6ToImgFile()
+
+ //  获取  验证码 辅助 说明 图像识别结果
+function getImgSbm(){	
+	
+	xImgTopBtnFlag = secSys.xImgTopBtnFlag
+	yImgTopBtnFlag = secSys.yImgTopBtnFlag
+	
+	xImgBtomBtnFlag = secSys.xImgBtomBtnFlag
+	yImgBtomBtnFlag = secSys.yImgBtomBtnFlag
+
+	
+    // 把验证码截屏，保存成本地图片    925, 290    975   310
+	var picLastPrice = com.picture.snap(0, xImgTopBtnFlag,yImgTopBtnFlag , xImgBtomBtnFlag-xImgTopBtnFlag,yImgBtomBtnFlag-yImgTopBtnFlag);
+	picLastPrice.Save("/imgSbm.jpg");		
+	
+	//获取图像像素数据
+	pixLastPrice = liblept.pixRead( ..io.fullpath("\imgSbm.jpg") );	
+	ocr.setImage2( pixLastPrice );	
+	
+	//识别图像
+	if( 0 != ocr.recognize() ){
+		..io.print(1226,"识别图像出错");
+		return "";
+	}
+	var result = ocr.getText(); 	
+	try{
+		num = tonumber(result)
+	}
+		catch(e){	
+	}
+	result = string.trim(result)
+	result = string.replace(result," ","")
+	return  result; 
+}
+
+
+function getImgPriceHigh(){	
+	
+	xImgTopBtnFlagPrice = secSys.xImgTopBtnFlagPrice
+	yImgTopBtnFlagPrice = secSys.yImgTopBtnFlagPrice
+	
+	xImgBtomBtnFlagPrice = secSys.xImgBtomBtnFlagPrice
+	yImgBtomBtnFlagPrice = secSys.yImgBtomBtnFlagPrice
+
+	
+    // °??é?¤?????á￡?±￡′?3é±?μ?í???    925, 290    975   310
+	var picLastPrice = com.picture.snap(0, xImgTopBtnFlagPrice,yImgTopBtnFlagPrice ,
+	 xImgBtomBtnFlagPrice-xImgTopBtnFlagPrice,yImgBtomBtnFlagPrice-yImgTopBtnFlagPrice);
+	picLastPrice.Save("/imgPrice.jpg");		
+	
+	//??è?í???????êy?Y
+	pixLastPrice = liblept.pixRead( ..io.fullpath("\imgPrice.jpg") );	
+	ocr.setImage2( pixLastPrice );	
+	
+	//ê?±eí???
+	if( 0 != ocr.recognize() ){
+		//console.log(true,"ê?±eí???3?′í");
+		return "";
+	}
+
+	
+	var result = ocr.getText(); 
+	
+	try{
+		num = tonumber(result)
+		//if (num < 1000 or num > 9999 )
+		//	return  ""; 
+	}
+	catch(e){
+		
+	}
+	
+	result = string.trim(result)
+	result = string.replace(result," ","")
+	
+	return  result; 
+}
+
+
+
+
+
+
+
+
+
+pressF1 = function(){
+	setCustomAddPriceEdtValue()
+	isYzmOk = "0"
+	
+	clkCustomAddPriceBtn()
+	//clkAdd300()  // clk + 300
+	win.delay(10)	
+	
+	getCurBidPrice()
+	//setPrice(f1Price)   // add 200 
+	win.delay(10)	
+	clkBidBtn300() // clk  bid btn
+	
+	// demo
+	//import mouse
+	//mouse.click( 845, 559,true); 
+	// end demo	
+	//mouse.move(0,0,true)
+}
+
+
+pressF1300 = function(){
+	//setCustomAddPriceEdtValue()
+	isYzmOk = "0"
+	
+	//clkCustomAddPriceBtn()
+	clkAdd300()  // clk + 300
+	win.delay(10)	
+	
+	getCurBidPrice()
+	//setPrice(f1Price)   // add 200 
+	win.delay(10)	
+	clkBidBtn300() // clk  bid btn
+	
+	// demo
+	import mouse
+	mouse.click( 845, 559,true); 	
+	//mouse.move(0,0,true)
+}
+
+
+
+
+pressF3 = function(){		
+	clkBidConfirm300()
+	win.delay(200)
+	clkErrWndBtn300()		
+}
+
+import recImgByRemoteMan
+//recImgByRemoteMan.connect(imgSvrIp)
+//..io.print(1338, "recImgByRemoteMan.connect")
+
+pressF7 = function(varYzmType = "jpp"){
+
+	if (manualYzm == "1"){	
+		return "", ""; 
+	}
+		
+	mainForm.picturebox2.image = "\qmt.jpg"
+	
+	// 截屏
+	getCode6ToImgFile()
+	
+	mainForm.picturebox2.redraw()
+	mainForm.picturebox2.image = "D:\jppweb\imgcode6.jpg"
+	mainForm.picturebox2.redraw()
+	
+	
+	//gcode = "123456"
+	//
+	xLog("start sbm")
+	var tmpsbm = getImgSbm()
+	var codeQzh = getCodeQzh(tmpsbm)
+	//var tmpcode4 = getCode4(gcode,tmpsbm)
+	xLog("end sbm = "+tmpsbm )
+	
+	
+	if (varYzmType == "dmt") {
+		xLog("start dmt")
+		snapImg.snapImgRectFromImgFile("D:\jppweb\imgcode6.jpg", "D:\jppweb\imgcode4.jpg", codeQzh)
+		jppDecode4("D:\jppweb\imgcode4.jpg")
+		xLog("end dmt")
+	}
+	else if (varYzmType == "jpp") {
+		xLog("start dmt")
+		snapImg.snapImgRectFromImgFile("D:\jppweb\imgcode6.jpg", "D:\jppweb\imgcode4.jpg", codeQzh)
+		//jppDecode4("D:\jppweb\imgcode4.jpg")
+		//import recImgByRemoteMan
+		import thread
+		
+		nowTime = time.now()
+		nowTime.format="%H%M%S";
+		nowTimeStr = tostring(nowTime) 
+		
+		..io.print("recImgB",nowTimeStr)
+		
+	
+		subThreadTable.threadRecImgFlag = "recimgreq"
+		var tmpCode4 = ""
+		while(true)
+		{
+			tmpCode4 = subThreadTable.threadRecImgCode4Str
+			if (tmpCode4 != null) and (string.len(tmpCode4) > 0) {	
+				subThreadTable.threadRecImgCode4Str = ""
+				break ;
+			}
+			else {
+				win.delay(200)
+			}	
+		}
+		//var tmpCode4 = recImgByRemoteMan.recImgStr4(imgSvrIp, "D:\jppweb\imgcode4.jpg")
+		..io.print(1346, "jppRecImg", tmpCode4)
+		
+		
+		if(tmpCode4 == "y") 
+		{	
+			nowTime = time.now()
+			nowTime.format="%H%M%S";
+			nowTimeStr = tostring(nowTime) 
+			..io.print("recImgE",nowTimeStr)
+		
+		    win.delay(200)
+			clkBidCancel300()
+			win.delay(200)
+			clkBidConfirm300()
+			pressF1300()
+			win.delay(900)
+			pressF7(yzmType)	
+			return "", "";
+		}
+		
+		gcode = tmpCode4
+		//thread.create(recImgByRemoteMan.recImgStr4, imgSvrIp, "D:\jppweb\imgcode4.jpg")
+		xLog("end dmt")
+	}
+	else {
+		gcode = jppDecode6uuScreen(xImgTopBtn,yImgTopBtn , xImgBtomBtn-xImgTopBtn,yImgBtomBtn-yImgTopBtn)
+	}
+	
+	
+	var tmpcode4 = string.trim(gcode)
+	//var tmpcode4 = getCode4(gcode,tmpsbm)
+	setImgCode(tmpcode4)
+	
+	return tmpcode4, gcode; 	
+}
+
+
+
+setEdtValue = function( x, y , value){
+	import mouse
+	mouse.clickDb(x,y,true)	
+	win.delay(1000)
+    import key
+    //key.send(string.sub()
+    key.send(value,100)
+    win.delay(1000)		
+}
+
+clkBtnValue = function(x, y){
+	import mouse
+	mouse.click( x, y,true); 	
+	mouse.move(0,0,true)
+}
+
+
+setUser = function(){
+	..io.print(22, user)
+	setEdtValue(xUserEdt, yUserEdt, user)		
+}
+
+
+setPwd = function(){
+	..io.print(33, pwd)
+	setEdtValue(xPwdEdt, yPwdEdt, pwd)	
+}
+
+
+function getImgFile(xImgTop, yImgTop, xImgBtom, yImgBtom, imageFile){
+	
+    // °??é?¤?????á￡?±￡′?3é±?μ?í???    925, 290    975   310
+    //import com.picture
+	var picLastPrice = com.picture.snap(0, xImgTop,yImgTop , xImgBtom-xImgTop,yImgBtom-yImgTop);
+	
+	//"D:\jppweb\imgcode6.jpg"
+	picLastPrice.Save(imageFile);		
+}
+
+setLoginYzm = function(){
+	//..io.print(9999,xImgTopLogin, yImgTopLogin, xImgBtomBtnLogin,yImgBtomBtnLogin)
+	getImgFile(xImgTopLogin, yImgTopLogin, xImgBtomBtnLogin,yImgBtomBtnLogin,"D:\jppweb\loginYzm.jpg")
+	//getImgFile(919,459,107,100,"D:\jppweb\loginYzm.jpg")
+	jppDecode6Test("D:\jppweb\loginYzm.jpg")
+	
+	var rcode = string.trim(gcodeTest)
+	rcode = string.sub(rcode, 1, 6)
+	..io.print(999,string.trim(rcode))
+	setEdtValue(xImgLoginEdt, yImgLoginEdt, rcode)	
+}
+
+login = function(){
+	clkBtnValue(xBtnLogin, yBtnLogin)
+}
+
+..io.print(44, user, pwd)
+
+
+loginOnce = function(){
+	setUser()
+	setPwd()
+	setLoginYzm()
+	login()
+}
+
+loginAgain = function(){
+	setUser()
+	setPwd()
+	setIdNo()
+	setLoginAgainYzm()
+	loginAgain()	
+}
+
+setBidOncePrice = function(){
+	setEdtValue(xBidOnce1Edt, yBidOnce1Edt, "82600")	
+	setEdtValue(xBidOnce2Edt, yBidOnce2Edt, "82600")	
+	clkBtnValue(xBidOnceBtn, yBidOnceBtn)	
+	
+	
+}
+
+
+setbidOnceYzm = function(){
+	mainForm.picturebox2.image = "\qmt.jpg"
+	
+	// ???á
+	getCode6ToImgFile()
+	mainForm.picturebox2.redraw()
+	mainForm.picturebox2.image = "D:\jppweb\imgcode6.jpg"
+	mainForm.picturebox2.redraw()
+	
+	
+	if (yzmType == "dmt") {
+		xLog("start dmt")
+		jppDecode6("D:\jppweb\imgcode6.jpg")
+		xLog("end dmt")
+	}
+	else {
+	gcode = jppDecode6uuScreen(xImgTopBtn,yImgTopBtn , xImgBtomBtn-xImgTopBtn,yImgBtomBtn-yImgTopBtn)
+	}
+	
+	//gcode = "123456"
+	string.trim(gcode)
+	
+	var rcode = string.trim(gcode)
+	rcode = string.sub(rcode, 1, 6)
+	xLog("start sbm")
+    var tmpsbm = getImgSbm()
+	var tmpcode4 = getCode4(gcode,tmpsbm)
+	xLog("end sbm")
+	
+	//setImgCode6(rcode)
+	setImgCode(tmpcode4)
+	
+	//return tmpcode4, gcode; 	
+}
+
+
+
+
+bidOnce = function(bidPrice){
+	setBidOncePrice()
+	
+	// 等待验证码
+	win.delay(2000)
+	//redo
+	pressF7(yzmType)
+	
+	//###test 
+	//setbidOnceYzm()
+	
+	// 等待
+	win.delay(3000)
+	pressF3()	
+	
+	
+	win.delay(3000)
+	
+	// 点击确认按钮
+	clkErrWndBtn300()
+	
+}
+
+
+pressBidTwice = function(){
+	clkAdd300()  // clk + 300
+	win.delay(100)	
+	setPrice(0)   // add 0 
+	win.delay(100)	
+	clkBidBtn300() // clk  bid btn
+}
+
+bidTwice = function(){
+	pressBidTwice()
+	
+	// 等待验证码
+	win.delay(2000)
+		//redo
+	pressF7(yzmType)
+	
+	//###test 
+	//setbidOnceYzm()
+	
+	// μè′y
+	win.delay(3000)
+	pressF3()	
+	
+	
+	win.delay(3000)
+	
+	// μ??÷è·è?°′?￥
+	clkErrWndBtn300()
+	
+	
+}
+
+
+
+// 自动登陆 9:30
+
+		
+loginOnceAll = function(){
+	startCamPauseRecord()
+	win.delay(3000)
+	loginOnce()	
+	win.delay(3000)
+	startCamPauseRecord()	
+}
+
+	
+	// 首次出价  10:32
+
+bidOnceAll = function(){
+	startCamPauseRecord()
+	win.delay(3000)
+	bidOnce()
+	win.delay(3000)
+	startCamPauseRecord()			
+}
+
+	
+	
+// 二次出价  11:02
+
+bidTwiceAll = function(){
+	startCamPauseRecord()
+	win.delay(3000)
+	bidTwice()
+	win.delay(3000)
+	startCamPauseRecord()	
+}
+
+
+// 设置自定义加价
+setCustomAddPriceEdtValue = function(){
+	import mouse
+	mouse.clickDb(xCustomAddPriceEdt,yCustomAddPriceEdt,true)	
+	win.delay(10)
+	key.press(0x8/*_VK_BACK*/)
+	win.delay(10)
+    import key
+    //key.send(string.sub()
+    //key.send(f1Price,2)
+
+    import win.clip
+    key.combine("CTRL","a")
+    win.delay(20) 
+	win.clip.write(f1Price)
+    win.delay(20)
+    key.combine("CTRL","v")
+    
+    win.delay(10)	
+}
+
+
+// 点击自定义加价
+clkCustomAddPriceBtn = function(){
+	import mouse
+	mouse.click( xCustomAddPriceBtn, yCustomAddPriceBtn,true); 	
+	mouse.move(0,0,true)
+}
+
+
+
+
+
+///###hotkey
+
+import key.hotkey; 
+
+//
+hotkey = key.hotkey(mainForm) 
+
+hotkey.reg(
+    "ALT","P", 
+    function(hwnd,...){
+        ..io.print("ALT=P", "loginOnce")
+        loginOnce()
+    } 
+)
+
+
+
+hotkey.reg(
+    "ALT","I", 
+    function(hwnd,...){
+        ..io.print("1306-ALT=i","gStopFlag", gStopFlag)
+       	if (gStopFlag == "0"){
+       		gStopFlag = "1"
+       	}else {
+       		gStopFlag = "0"
+       	}
+       	
+    } 
+)
+
+
+
+
+
+// alt + k  开始暂停录像
+startCamPauseRecord = function(){
+	key.combine("ALT","K")
+}
+
+// alt + j 停止录像
+stopCamRecord =  function(){
+	key.combine("ALT","L")
+}
+
+
+hk.proc=function(msg,vkcode,scancode){
+    var kn = key.getName( vkcode );
+    
+
+    if (kn == "F11"){
+    	//autoKeyEnable = true	 
+    }
+	if (kn == "F12"){
+    	//autoKeyEnable = false	 
+    }
+
+    
+    if autoKeyEnable { 
+    	select(msg) {
+        case 0x100/*_WM_KEYDOWN*/ ,0x104/*_WM_SYSKEYDOWN*/{
+	
+            if  (kn == "F1"){ // +300    873￡? 443
+				pressF1()
+            }
+            else if  (kn == "F4"){ //3???   1032￡? 493
+				clkBidCancel300()  // clk cancel btn
+				win.delay(200)
+				clkErrWndBtn300()	
+            }
+            else if  (kn == "F3"){ // è·è?ìá??    781￡? 569
+				pressF3()
+            }
+          //  else if  (kn == "F4"){ // 1?±?ìáê?     888￡? 550
+          //  	clkErrWndBtn300()
+          //  }
+          //  else if  (kn == "F5"){ // 1??à?¨?¨￠¨o?     888?ê? 550
+          //  	setPrice(100)
+          //  }
+            else if  (kn == "F6"){ // 1??à?¨?¨￠¨o?     888?ê? 550
+                clkAdd300()  // clk + 300
+            	win.delay(100)	
+				setPrice(f6Price)
+				win.delay(100)	
+            	clkBidBtn300() // clk  bid btn
+            }
+			else if  (kn == "F7"){ 
+				xLog("start F7")
+				pressF7(yzmType)
+				xLog("end F7")
+				xLogFlush()
+            }  
+            else if  (kn == "F8"){
+            	mainForm.picturebox5.image = "\qmt.jpg"
+				mainForm.edit5.text = getImgSbm()
+				
+				mainForm.picturebox5.redraw()
+				mainForm.picturebox5.image = "\imgSbm.jpg"
+				mainForm.picturebox5.redraw()
+				
+				
+				// 识别最高价
+				//mainForm.picturebox6.image = "\qmt.jpg"
+				//mainForm.edit8.text = getImgPriceHigh()
+				
+				//mainForm.picturebox6.redraw()
+				//mainForm.picturebox6.image = "\imgPrice.jpg"
+				//mainForm.picturebox6.redraw()
+				
+				
+            }
+            else if  (kn == "F9"){ // 1???§?è???ì???ì?¨|??ìo?     888??§o? 550
+				mainForm.show(0x9/*_SW_RESTORE*/)
+				//win.setForeground(win.find("","【聚·拍牌】官方发布-一键拍牌-2015年8月12日"))
+            }          
+            
+            else if  (kn == "F10"){ // ????×?±ê
+            
+            	import mouse
+            	x, y  = mouse.getPos()
+            	mainForm.edit3.text = tostring(x) + ", " + tostring(y)
+				if mainForm.radiobutton.checked {
+					secSys.xPrice300 = x
+					secSys.yPrice300 = y
+				}
+				else if mainForm.radiobutton2.checked {
+					secSys.xPriceEdt = x
+					secSys.yPriceEdt = y
+				}	
+				else if mainForm.radiobutton3.checked {
+					secSys.xPriceBtn = x
+					secSys.yPriceBtn = y
+				}	
+				else if mainForm.radiobutton4.checked {	
+					secSys.xConfirmBtn = x
+					secSys.yConfirmBtn = y
+				}	
+				else if mainForm.radiobutton5.checked {	
+					secSys.xCancelBtn = x
+					secSys.yCancelBtn = y
+				}	
+				else if mainForm.radiobutton6.checked {
+					secSys.xErrorBtn = x
+					secSys.yErrorBtn = y
+				}	
+				else if mainForm.radiobutton7.checked {	
+					secSys.xImgTopBtn = x
+					secSys.yImgTopBtn = y
+				}	
+				else if mainForm.radiobutton8.checked {
+					secSys.xImgBtomBtn = x
+					secSys.yImgBtomBtn = y
+				}				
+				else if mainForm.radiobutton9.checked {
+					secSys.xImgTopBtnFlag = x
+					secSys.yImgTopBtnFlag = y
+				}				
+				else if mainForm.radiobutton10.checked {
+					secSys.xImgBtomBtnFlag = x
+					secSys.yImgBtomBtnFlag = y
+				}	
+				else if mainForm.radiobutton11.checked {
+					secSys.xImgEdt = x
+					secSys.yImgEdt = y
+				}				
+				else if mainForm.radiobutton12.checked {
+					secSys.xImgTopBtnFlagPrice = x
+					secSys.yImgTopBtnFlagPrice = y
+				}				
+				else if mainForm.radiobutton13.checked {
+					secSys.xImgBtomBtnFlagPrice = x
+					secSys.yImgBtomBtnFlagPrice = y
+				}////---------
+				else if mainForm.radiobutton14.checked {
+					secSys.xUserEdt = x
+					secSys.yUserEdt = y
+				}
+				else if mainForm.radiobutton15.checked {
+					secSys.xPwdEdt = x
+					secSys.yPwdEdt = y
+				}
+				else if mainForm.radiobutton16.checked {
+					secSys.xImgLoginEdt = x
+					secSys.yImgLoginEdt = y
+				}
+				else if mainForm.radiobutton17.checked {
+					secSys.xImgTopLogin = x
+					secSys.yImgTopLogin = y
+				}
+				else if mainForm.radiobutton18.checked {
+					secSys.xImgBtomBtnLogin = x
+					secSys.yImgBtomBtnLogin = y
+				}
+				else if mainForm.radiobutton19.checked {
+					secSys.xBidOnce1Edt = x
+					secSys.yBidOnce1Edt = y
+				}
+				else if mainForm.radiobutton20.checked {
+					secSys.xBidOnce2Edt = x
+					secSys.yBidOnce2Edt = y
+				}
+				else if mainForm.radiobutton21.checked {
+					secSys.xBidOnceBtn = x
+					secSys.yBidOnceBtn = y
+				}
+				else if mainForm.radiobutton22.checked {
+					secSys.xIdNoEdt = x
+					secSys.yIdNoEdt = y
+				}	
+				else if mainForm.radiobutton23.checked {
+					secSys.xImgLogin2Edt = x
+					secSys.yImgLogin2Edt = y
+				}
+				else if mainForm.radiobutton24.checked {
+					secSys.xImgTopLogin2 = x
+					secSys.yImgTopLogin2 = y
+				}
+				else if mainForm.radiobutton25.checked {
+					secSys.xImgBtomBtnLogin2 = x
+					secSys.yImgBtomBtnLogin2 = y
+				}
+				else if mainForm.radiobutton26.checked {
+					secSys.xBtnLogin = x
+					secSys.yBtnLogin = y
+				}	
+				else if mainForm.radiobutton27.checked {
+					secSys.xBtnLogin2 = x
+					secSys.yBtnLogin2 = y
+				}
+				else if mainForm.radiobutton28.checked {
+					secSys.xCustomAddPriceEdt = x
+					secSys.yCustomAddPriceEdt = y
+				}
+				else if mainForm.radiobutton29.checked {
+					secSys.xCustomAddPriceBtn = x
+					secSys.yCustomAddPriceBtn = y
+				}									
+				// 保存配置
+				secSys.save()	
+				// 重新加载配置
+				updateCfg2Var()	
+            }
+            else if(kn == "F11"){
+				if mainForm.radiobutton.checked {
+					mainForm.radiobutton2.checked = true
+				}
+            }
+            else if(kn == "F12"){
+                mainForm.picturebox2.image = "\D:\jppweb\imgcode6_n.jpg"
+				
+				mainForm.picturebox2.redraw()
+				mainForm.picturebox2.image = "D:\jppweb\imgcode6_y.jpg"
+				mainForm.picturebox2.redraw()
+				
+				xLog("startCode")
+				
+				if (yzmType == "dmt") {
+					jppDecode6Test("D:\jppweb\imgcode6_y.jpg")
+				}
+				elseif (yzmType == "uu"){
+					gcodeTest = jppDecode6uuScreen(xImgTopBtn,yImgTopBtn , xImgBtomBtn-xImgTopBtn,yImgBtomBtn-yImgTopBtn)
+				} else {
+					//gcode = jppDecodeByImgLz("D:\jppweb\imgcode6.jpg","kaka21","qwer1234","kaka21")
+				}
+				
+				
+				string.trim(gcodeTest)
+				mainForm.edit5.text  =  gcodeTest
+				xLog("endCode")	
+				xLogFlush() 
+            }
+            else if(kn == "="){
+            	loginOnceAll()
+            }
+            else if(kn == "["){
+            	bidOnceAll()	
+            }
+            else if(kn == "]"){
+            	bidTwiceAll()	
+            }
+            else if(kn == ";")  {   // 输入自定义价格
+            	setCustomAddPriceEdtValue()
+            }
+            else if(kn == "F2"){  // 确认验证码
+            	isYzmOk = "1"
+            }
+            else if(kn == "F5") {  // 点击验证码进行刷新
+				import mouse
+				mouse.click( xImgTopBtn+10, yImgTopBtn+10,true); 
+				
+				win.delay(200)
+				
+				mouse.click(xImgBtomBtn-10, yImgBtomBtn-10, true);
+				win.delay(100)
+            }
+            
+
+           // io.print("°′??",kn)
+        }
+        case 0x101/*_WM_KEYUP*/,0x105/*_WM_SYSKEYUP*/{
+            //io.print("μˉ?e",kn)
+            if(kn=="F6"){
+                //Pause="stop"
+            }//éè??°′F6í?3?3ìDò
+        }  
+    }  
+    }
+}
+
+
+
+import win.timer
+var checkListtimer = win.timer( mainForm );
+checkListtimer.setInterval(100)
+checkListtimer.enable()
+
+checkListtimer.onTimer = function(hwnd,msg,id,tick){
+
+	import thread
+	import thread.table
+	
+	unCheckListOne(subThreadTable.recMsgStr51111)	
+
+}
+
+
+mainForm.button.oncommand = function(id,event){
+	timer.disable()
+	timer.enable()
+	gDoneTimer = "0"
+}
+
+import time
+gDoneTimer = "0"
+//startTimeStr = "021620"
+//endTimeStr =   "021622"
+//startTimeStrSecond2 = startTimeStrSecond + 2
+
+gF3Done = ""
+
+mainForm.button3.oncommand = function(id,event){
+	//mainForm.msgbox( mainForm.button3.text );
+	timer.disable()
+	openPriceSvr()	
+}
+
+mainForm.button7.oncommand = function(id,event){
+	//mainForm.msgbox( mainForm.button7.text );
+	xLog("ccmdallbid")
+	responder.sendMsg("ccmdallbid")	
+	//	pressF1()
+	//	pressF7(yzmType)	
+	//	pressF3()	
+}
+
+
+mainForm.button8.oncommand = function(id,event){
+	//mainForm.msgbox( mainForm.button8.text );
+	xLog("ccmdalllogin")
+	responder.sendMsg("ccmdalllogin")	
+}
+
+
+mainForm.button32.oncommand = function(id,event){
+	//mainForm.msgbox( mainForm.button32.text );
+	xLog("ccmdallstartcam")
+	responder.sendMsg("ccmdallstartcam")		
+	
+}
+
+
+mainForm.button9.oncommand = function(id,event){
+	//mainForm.msgbox( mainForm.button8.text );
+	xLog("ccmdalloncebid")
+	responder.sendMsg("ccmdalloncebid")	
+}
+
+
+mainForm.button10.oncommand = function(id,event){
+	//mainForm.msgbox( mainForm.button8.text );
+	xLog("ccmdalltwicebid")
+	responder.sendMsg("ccmdalltwicebid")	
+}
+
+
+// sel 登陆
+mainForm.button14.oncommand = function(id,event){
+	//mainForm.msgbox( mainForm.button14.text );
+	var mgrList = getSecListFormChkList()
+	
+	for(k,v in mgrList){
+		var msg = "ccmd"+v+"oncelogin"
+		..io.print(msg)
+		responder.sendMsg(msg)	
+		win.delay(2000)				
+	}	
+}
+
+mainForm.button17.oncommand = function(id,event){
+	//mainForm.msgbox( mainForm.button17.text );
+	xLog("ccmdalltestbid")	
+	responder.sendMsg("ccmdalltestbid")	
+	
+}
+
+
+
+mainForm.button13.oncommand = function(id,event){
+	//mainForm.msgbox( mainForm.button13.text );
+	var mgrList = getSecListFormChkList()
+	
+	for(k,v in mgrList){
+		var msg = "ccmd"+v+"openpage"
+		..io.print(msg)
+		responder.sendMsg(msg)	
+		win.delay(2000)					
+	}	
+	
+}
+
+mainForm.button15.oncommand = function(id,event){
+	//mainForm.msgbox( mainForm.button15.text );
+	var mgrList = getSecListFormChkList()
+	xLog("选中进入登陆页面")
+	for(k,v in mgrList){
+		var msg = "ccmd"+v+"alloncebid"
+		..io.print(msg)
+		responder.sendMsg(msg)	
+		win.delay(2000)			
+	}	
+		
+	
+}
+
+
+mainForm.button16.oncommand = function(id,event){
+	//mainForm.msgbox( mainForm.button15.text );
+	var mgrList = getSecListFormChkList()
+	
+	for(k,v in mgrList){
+		var msg = "ccmd"+v+"alltwicebid"
+		..io.print(msg)
+		responder.sendMsg(msg)			
+		
+		win.delay(2000)	
+	}	
+		
+	
+}
+
+
+mainForm.button18.oncommand = function(id,event){
+	//mainForm.msgbox( mainForm.button15.text );
+	var mgrList = getSecListFormChkList()
+	
+	for(k,v in mgrList){
+		var msg = "ccmd"+v+"alltestbid"
+		..io.print(msg)
+		responder.sendMsg(msg)		
+		win.delay(2000)			
+	}	
+		
+	
+}
+
+
+
+mainForm.button11.oncommand = function(id,event){
+	//mainForm.msgbox( mainForm.button11.text );
+	responder.sendMsg("ccmdallopenpage")		
+	xLog("ccmdallopenpage")
+}
+
+
+mainForm.button26.oncommand = function(id,event){
+	//mainForm.msgbox( mainForm.button26.text );
+	responder.sendMsg("ccmdallclkTipWindowConfirm")		
+	xLog("ccmdallclkTipWindowConfirm")	
+	
+}
+
+mainForm.button25.oncommand = function(id,event){
+	//mainForm.msgbox( mainForm.button26.text );
+	responder.sendMsg("ccmdallclkOpenWebTest")		
+	xLog("ccmdallclkOpenWebTest")	
+	
+}
+
+mainForm.button27.oncommand = function(id,event){
+	//mainForm.msgbox( mainForm.button27.text );
+	responder.sendMsg("ccmdallclkIETip")		
+	xLog("ccmdallclkIETip")			
+}
+
+mainForm.button29.oncommand = function(id,event){
+	//mainForm.msgbox( mainForm.button29.text );
+	
+	responder.sendMsg("ccmdallsnapscreen")		
+	xLog("ccmdallsnapscreen")			
+}
+
+
+
+
+
+getAllChkList = function(){
+ 	//mainForm.checklist.getChecked()
+ 	
+ 	var checkedItems = {}
+	for hItem in mainForm.checklist.each(){
+		var checked = false;
+		checked = mainForm.checklist.getChecked(hItem)	
+		var checkItemTxt = mainForm.checklist.getItemText(hItem,1)
+		
+		//if (checked ){
+			table.insert(checkedItems, checkItemTxt)
+		//}
+		
+	}
+	
+	return checkedItems; 	
+}
+
+mainForm.button19.oncommand = function(id,event){
+	import process
+	var mgrList = getAllChkList()
+	
+	for(k,v in mgrList){
+		//var msg = "ccmd"+v+"alltwicebid"
+		var threadReqStr = '-pw qwer -l admin  '+v+' \"cmd.exe /c TASKKILL /F /IM jpp.exe /T \"'
+		
+		..io.print("plink " +threadReqStr)
+		
+		process.execute("plink.exe", threadReqStr , ,0x0);		
+	}	
+	
+}
+
+
+
+mainForm.button20.oncommand = function(id,event){
+	
+	import process
+	var mgrList = getAllChkList()
+	
+	//plink.exe -pw qwer -l admin  192.168.0.226 "cmd.exe /c start d:\jppweb\jpp.exe"
+	for(k,v in mgrList){
+		//var msg = "ccmd"+v+"alltwicebid"
+		var threadReqStr = '-pw qwer -l admin  '+v+' \"cmd.exe /c start d:\\jppweb\\jpp.exe"'
+		
+		..io.print("plink " +threadReqStr)
+		
+		process.execute("plink.exe", threadReqStr , ,0x0);		
+	}	
+
+	
+	
+}
+
+mainForm.button21.oncommand = function(id,event){
+	
+	import process
+	var mgrList = getAllChkList()
+	
+	//plink.exe -pw qwer -l admin  192.168.0.226 "cmd.exe /c start d:\jppweb\jpp.exe"
+	for(k,v in mgrList){
+		//var msg = "ccmd"+v+"alltwicebid"
+		var threadReqStr = '-pw qwer -l admin  '+v+' \"cmd.exe /c TASKKILL /F /IM qqb* /T \"'
+		
+		..io.print("plink " +threadReqStr)
+		
+		process.execute("plink.exe", threadReqStr , ,0x0);		
+	}	
+	
+
+	
+	
+}
+
+mainForm.button22.oncommand = function(id,event){
+	
+	import process
+	var mgrList = getAllChkList()
+	
+	//plink.exe -pw qwer -l admin  192.168.0.226 "cmd.exe /c start d:\jppweb\jpp.exe"
+	for(k,v in mgrList){
+		//var msg = "ccmd"+v+"alltwicebid"
+		var threadReqStr = '-pw qwer -l admin  '+v+' \"cmd.exe /c start qqb.lnk"'
+		
+		..io.print("plink " +threadReqStr)
+		
+		process.execute("plink.exe", threadReqStr , ,0x0);		
+	}	
+
+	
+	
+}
+
+
+//发布全部配置
+mainForm.button23.oncommand = function(id,event){
+	//mainForm.msgbox( mainForm.button23.text );
+	
+	
+}
+
+// 重启验证码代理
+mainForm.button28.oncommand = function(id,event){
+	//mainForm.msgbox( mainForm.button28.text );
+	//"TASKKILL /F /IM jpp.exe /T"
+	import process
+	//var threadReqStr = '-pw qwer -l admin  '+'127.0.0.1'+' \"cmd.exe /c start imgbrk.lnk"'
+	var threadReqStr = '\" /c start imgbrk.lnk"'
+	var killthreadReqStr = '-pw qwer -l admin  '+'127.0.0.1'+' \"cmd.exe /c TASKKILL /F /IM java* /T \"'
+	process.execute("plink.exe", killthreadReqStr , ,0x0);		
+	win.delay(1000)
+	//process.execute("cmd.exe", threadReqStr , ,0x0);	
+	process.execute("cmd.exe", threadReqStr,"open",0x1/*_SW_NORMAL*/);	
+}
+
+
+
+
+mainForm.show() 
+//mainForm.show(0x6/*_SW_MINIMIZE*/)
+
+
+ioConsoleWnd = win.find("ConsoleWindowClass","jpp.exe")
+win.show(ioConsoleWnd,0x6/*_SW_MINIMIZE*/)
+
+ioConsoleWnd1 = win.find("ConsoleWindowClass","aardio.exe")
+win.show(ioConsoleWnd1,0x6/*_SW_MINIMIZE*/)
+
+//startCamPauseRecord()
+
+
+startAutoPubPriceVersion = function(){
+	timer.disable()
+	gStopFlag = "0"
+	openPriceSvr()
+	
+	
+	mainForm.button6.text = mainForm.button6.text + "开始"
+}
+
+startFullManualVersion = function(){
+	manualYzm = "1"	
+	manualBid = "1"
+}
+
+startHalfManualVersion = function(){
+	
+}
+
+checkListAll()
+
+// openPriceSvr 主线程阻塞
+
+
+..io.print("2571-openPriceSvr")
+openPriceSvr()
+
+return win.loopMessage(); 
+
+
+
+
+//startThreadReplySvr()
+
+
+
+//checkListAll()
+
+
+//version-1 自动启动价格发布版本
+//startAutoPubPriceVersion()
+
+//version-2 全手动版
+//startFullManualVersion()
+
+//version-3 半手动版
+//startHalfManualVersion()
+
+
+

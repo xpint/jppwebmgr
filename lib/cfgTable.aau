@@ -1,0 +1,180 @@
+
+namespace cfgTable{
+
+	..io.open()
+	
+	_tableIpListFilter = {
+			"192.168.11.";
+			"192.168.0.";
+			"171.17.3.";
+			"192.168.1.";
+			"11.12.0."
+	}
+	
+	
+	splitIpCfgStr = function(cfgStr){
+		import string
+		import table
+		var user, pwd, idNo, priceAdded, priceBefore, timeLine, priceSvrIp, imgSvrIp = ""
+		
+		var array = string.split(cfgStr, ";")
+		
+		user, pwd, idNo, priceAdded, priceBefore, timeLine, priceSvrIp, imgSvrIp = table.unpack(array)
+		
+		splitItem = function(item){	
+			var result = string.split(item,"=")[2]
+			//..io.print(1, result)
+			result = string.replace(result, '"',"")
+			//..io.print(2, result)
+			return result; 
+		}
+		
+		try{
+			user = splitItem(user)	
+			pwd = splitItem(pwd)
+			idNo = splitItem(idNo)
+			priceAdded = splitItem(priceAdded)
+			priceBefore = splitItem(priceBefore)
+			timeLine = splitItem(timeLine)
+			priceSvrIp = splitItem(priceSvrIp)
+			imgSvrIp = splitItem(imgSvrIp)
+		}
+		catch(e){
+			..io.print("splitIpCfgStr error")	
+		}
+
+		return user, pwd, idNo, priceAdded, priceBefore, timeLine, priceSvrIp, imgSvrIp; 			
+		//{user="user";pwd="pwd";idNo="idNo";pricdAdded="pricdAdded";priceBefore="priceBefore";timeLine="timeLine";ip="ip"};	
+	}
+		
+	
+	getClientIp = function(){
+		import inet.adapter
+		import string
+		import table
+		
+
+				
+		// getCfgByIp
+		
+		//ipCfgStr = "user=user;pwd=pwd;idNo=idNo"
+		
+		//array = string.split(ipCfgStr, ";")
+		
+		//user, pwd, idNo = table.unpack(array)
+		
+		//tab ={ table.unpack(array) }; //
+		
+		//..io.print(tab)
+		
+	/*	
+				tab = {"a";"abc";"abcd"} ; //创建一个table;
+		a,b,c = table.unpack(tab);
+		tab ={ table.unpack(tab) }; //将所有返回值转换为table变量tlinks
+		
+		
+		..io.print(tab.a)
+				
+		for k,v in tab{
+			..io.print(k, v)
+		}
+		
+		execute("pause")
+		*/
+		//array.mix("user=user;pwd=pwd;idNo=idNo")
+		
+//		..io.print("unpack", user, pwd, idNo)
+		
+//		for k,v in array{
+//			..io.print(k, v)
+//		}
+		
+		var result = ""
+		
+		for adptInfo in inet.adapter.each() { 
+			
+			ip = adptInfo.ipAddressList.ipAddress
+
+			for(i = 1;#_tableIpListFilter;1){
+				item = _tableIpListFilter[i]
+				
+				index = string.indexOf(ip, item)
+				
+				if (index!=null) and (index>0){
+					result = ip
+					break ;
+				}
+			}
+			..io.print(ipAddr, ip)	
+		}
+		return result; 
+	}
+	
+	//..io.open()	
+	//ip = getIp()
+
+    //..io.print("ip",ip)
+    
+    getCfgByIp = function(){
+    	
+    	
+    }
+    
+     
+    getClientIp()
+	
+
+
+//execute("pause")
+	//columnsTab = (user="user";pwd="pwd",idNo="idNo",pricdAdded="pricdAdded";priceBefore="priceBefore";timeLine="timeLine";ip="ip")
+
+/*
+{
+    {user="";pwd="",idNo="",pricdAdded="";timeLine="";ip=""};
+    {} 
+}
+*/
+
+/*
+	import fsys.table
+	import string.list
+	
+	strList = string.list()
+	
+	strList.load("/cfgTable.cfg")
+	
+	..io.open()
+	..io.print(strList)
+	
+	
+	strList.mixin(
+		a = {user="user";pwd="pwd";idNo="idNo";pricdAdded="pricdAdded";priceBefore="priceBefore";timeLine="timeLine";ip="ip"};
+		b={user="user";pwd="pwd";idNo="idNo";pricdAdded="pricdAdded";priceBefore="priceBefore";timeLine="timeLine";ip="ip"}
+	)
+	
+	execute("pause")
+	
+	//strList.
+	
+	strList.save()
+	
+	
+	
+	
+	cfgTable = fsys.table("/cfgTable.cfg")
+		
+	cfgTable.load()
+
+	 
+// 修改配置，直接修改文件即可
+	cfgTable.mixin(
+		a = {user="user";pwd="pwd";idNo="idNo";pricdAdded="pricdAdded";priceBefore="priceBefore";timeLine="timeLine";ip="ip"};
+		b={user="user";pwd="pwd";idNo="idNo";pricdAdded="pricdAdded";priceBefore="priceBefore";timeLine="timeLine";ip="ip"}
+	)
+
+	
+	cfgTable.save()
+	
+*/
+
+}

@@ -1,0 +1,56 @@
+
+namespace snapImg{
+	
+	
+	snapImgRectFromImgFile = function(oldImgFile, newImgFile,vtype){
+	
+		import gdip;
+		
+		
+		
+		var bitmap = gdip.bitmap( oldImgFile )
+
+    	var oldWidth = bitmap.width
+    	var oldHeight = bitmap.height
+    	
+    	var newWidth = oldWidth / 6 * 4
+    	var newHeight = oldHeight
+    	
+
+    	//snap 0 to  length
+    	if (vtype = "q"){   
+    		startWidth = 0
+    		endWidth =   newWidth
+    	}elseif(vtype = "h"){
+    		startWidth = oldWidth /6 * 2  //snap 1 to  length
+    		endWidth = newWidth
+    	}else {  //vtype = "h"
+  			startWidth = oldWidth /6 * 1 //snap 1 to length
+    		endWidth = newWidth
+    	}
+   	
+		var bitmapNew = gdip.bitmap(newWidth,newHeight);
+		var graphics = bitmapNew.getGraphics();
+		//graphics.drawImageRectRect(bitmap,0,0,50,50,30,30,50,50)
+		//..io.open()
+		//..io.print(oldWidth, oldHeight,  startWidth, endWidth)
+		//..io.pause()
+		graphics.drawImageRectRect(bitmap,0,0,newWidth,newHeight, startWidth, 0, endWidth, oldHeight)
+		//graphics.drawImageRectRect(bitmap,0,0,newWidth,newHeight, 35, 0, 69, oldHeight)
+		//graphics.drawImageRectRect(
+		bitmapNew.save(newImgFile)
+		
+		bitmap.dispose()
+		bitmapNew.dispose()
+		
+	}
+	
+	//{demo
+	//snapImgRectFromImgFile("D:\jppweb\imgcode6.jpg", "D:\jppweb\imgcode4.jpg", "q")
+	
+	
+		
+	//import process;
+	//process.explore_select( "D:\jppweb\imgcode4.jpg")
+	//}deom end
+}

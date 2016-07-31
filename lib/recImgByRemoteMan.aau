@@ -1,0 +1,221 @@
+
+namespace recImgByRemoteMan{
+	
+	import thread.table; 
+	//import subPrice
+	var threadReq = thread.table("subPrice")
+	
+	
+		
+	var startTime = ""
+	var endTime = ""
+	var costTime = ""
+
+	import console
+	import io
+	import fsys
+	import time
+	import zeromq
+	
+	var requester = null;
+	var context = null;
+	var recvMsg = null;
+	var msg = null;
+	var recvMsg = null;	
+	var hbmsg = zeromq.message("hb")  
+	var hbmsgrecv = zeromq.message()  
+	
+	
+	threadReq.context = context
+	threadReq.recvMsg = recvMsg
+	threadReq.msg = msg
+	threadReq.recvMsg = recvMsg
+	threadReq.hbmsg = hbmsg
+	threadReq.hbmsgrecv = hbmsgrecv
+
+	connect = function(remoteIP){
+		..io.print("StartOpenZeromq...", startTime)
+			
+		context = zeromq.context(1) 
+		requester = context.zmq_socket_request() ;
+		threadReq.requester = requester
+		//requester.setsockopt(
+		
+		if( requester.connect( "tcp://"+remoteIP+":56666" ) ){
+			..io.print("imgSvr connect ok 56666")
+		}
+	}	
+	
+	close = function(){
+		msg.close()
+		recvMsg.close()	
+		requester.close()
+		context.term();	
+	}	
+
+	sendHeartBeatMsg = function(){
+		..io.print(41, "imgCli sendHeartBeatMsg")
+		requester.sendMsg(hbmsg)
+		requester.recvMsg(hbmsgrecv);
+	}
+	
+	
+	sendHeartBeatMsgThread = function(){
+		..io.print(63, "imgCli sendHeartBeatMsg Thread")
+		import thread.table; 
+		//import subPrice
+		var threadReq = thread.table("subPrice")
+		
+		threadReq.requester.sendMsg(hbmsg)
+		threadReq.requester.recvMsg(hbmsgrecv);
+	}
+	
+	
+	recImgStr4 = function(remoteIP, imgFile){
+	
+
+		//..io.open()
+		var resultStr = ""
+		
+		..io.print("")
+		..io.print("")
+		
+		startTime = time.now()
+		startTime.format="%H%M%S";
+		..io.print("startOpenImg...", startTime)
+		
+		endTime = time.now()
+		endTime.format="%H%M%S";
+		
+		var imgFile = io.open(imgFile, "rb");
+		imgFile.seek("set")	// to set seek 0
+		var imgSize = imgFile.size(1) // get size n bytes use param 1
+		
+		var rawImg = ..raw.malloc(imgSize, 0)		// init rawMem 0
+		imgFile.readBuffer(rawImg, imgSize)		// set rawMew by file binary content 
+		imgFile.close()
+		
+		startTime = time.now()
+		startTime.format="%H%M%S";
+		..io.print("imgOpened...", startTime)
+			
+		startTime = time.now()
+		startTime.format="%H%M%S";
+
+		
+		msg = zeromq.message(rawImg, imgSize)
+		
+		requester.sendMsg(msg)
+		//msg.close();
+		
+		startTime = time.now()
+		startTime.format="%H%M%S";
+		..io.print("imgSended...", startTime)
+		..io.print("untilImgSendedCost", tonumber(startTime)-tonumber(endTime))
+		
+		endTime = time.now()
+		endTime.format="%H%M%S";
+		
+		recvMsg = zeromq.message()  
+		requester.recvMsg(recvMsg);  
+		
+		resultStr =  recvMsg.getString() 	
+		io.print ("recvMsg", resultStr);
+		
+		startTime = time.now()
+		startTime.format="%H%M%S";
+		..io.print("imgReceived...", startTime, resultStr)
+		..io.print("untilImgReceivedCost", tonumber(startTime)-tonumber(endTime))
+		
+		..io.print("")
+		..io.print("")
+	
+
+		
+	    return resultStr; 
+	
+	}
+	
+	
+	recImgStr4Once = function(remoteIP, imgFile){
+	
+		import console
+		import io
+		import fsys
+		import time
+		//..io.open()
+		var resultStr = ""
+		
+		..io.print("")
+		..io.print("")
+		
+		startTime = time.now()
+		startTime.format="%H%M%S";
+		..io.print("startOpenImg...", startTime)
+		
+		endTime = time.now()
+		endTime.format="%H%M%S";
+		
+		var imgFile = io.open(imgFile, "rb");
+		imgFile.seek("set")	// to set seek 0
+		var imgSize = imgFile.size(1) // get size n bytes use param 1
+		
+		var rawImg = ..raw.malloc(imgSize, 0)		// init rawMem 0
+		imgFile.readBuffer(rawImg, imgSize)		// set rawMew by file binary content 
+		imgFile.close()
+		
+		startTime = time.now()
+		startTime.format="%H%M%S";
+		..io.print("imgOpened...", startTime)
+		
+		import zeromq
+		
+		
+		startTime = time.now()
+		startTime.format="%H%M%S";
+		..io.print("StartOpenZeromq...", startTime)
+				
+		var context = zeromq.context(1) 
+		var requester = context.zmq_socket_request() ;
+		
+			
+		if( requester.connect( "tcp://"+remoteIP+":56666" ) ){
+    		..io.print("connect ok")
+		}
+		
+		var msg = zeromq.message(rawImg, imgSize)
+		
+		requester.sendMsg(msg)
+		msg.close();
+		
+		startTime = time.now()
+		startTime.format="%H%M%S";
+		..io.print("imgSended...", startTime)
+		..io.print("untilImgSendedCost", tonumber(startTime)-tonumber(endTime))
+		
+		endTime = time.now()
+		endTime.format="%H%M%S";
+		
+		var recvMsg = zeromq.message()  
+		requester.recvMsg(recvMsg);  
+		
+		resultStr =  recvMsg.getString() 	
+		io.print ("recvMsg", resultStr);
+		
+		startTime = time.now()
+		startTime.format="%H%M%S";
+		..io.print("imgReceived...", startTime, resultStr)
+		..io.print("untilImgReceivedCost", tonumber(startTime)-tonumber(endTime))
+		
+		..io.print("")
+		..io.print("")
+	
+		recvMsg.close()	
+		requester.close()
+		context.term();
+		
+	    return resultStr; 
+	
+	}
+	
+}

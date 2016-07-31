@@ -1,0 +1,70 @@
+
+
+
+
+
+namespace recImgByRemoteManSvr{
+	
+
+//?∴t????
+import zeromq
+
+var context = zeromq.context(2)
+
+//replay??┷：o?socket：???：a??━??|━?request??┷：o?????：o1：??
+var responder = context.zmq_socket_reply()
+
+io.open()
+if( ! responder.bind(  "tcp://*:6669") ){ 
+    ..io.print( zeromq.lasterr() );  
+    return;
+}
+..io.print("server started..")
+
+var i = 1
+
+while (1) {
+    request = zeromq.message();
+    
+    ..io.print("start server listening cnt=", i)
+    if( ! responder.recvMsg(request) ){
+        ..io.print( zeromq.lasterr() )
+    }
+    
+    
+    rawP = request.getData()  
+    rawSize = request.getSize()
+    
+    import fsys.file
+	aFile =  fsys.file("d:\jppweb\imgcode4.newServer.jpg","w+")
+    aFile.writeMemory( rawP, rawSize)
+    aFile.flush()
+    aFile.close()
+    
+    
+    // io.print ("server receive msg to str:",request.getString() );
+    request.close();
+
+    //?：2?a：∴??：|：＜?：?：a?：???????：2??
+    sleep (1);
+    io.print("start reply...")
+    
+    var ioStr = ..io.getText()
+    
+    // ?∴?└?：a????└
+    reply = zeromq.message(ioStr); 
+    responder.sendMsg(reply)
+    reply.close();
+
+    //：|???|━???：2??：＜2?：|：＜??：＜??��?a：＜???,：：???:
+    //responder.send("?：a??━????o?")
+
+    io.print("end server listening cnt=", i)
+    i = i+1
+}
+
+	//：|???|━???：2???：♂：＜???┐?-??∴2??：♂?D??, 
+	//：：?1?：o1：??break：?????D??,?：＜???DD????|━???：2??：o：a?∴??│：o??? 
+	responder.close(); 
+	context.term();
+}
