@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="gb2312"?>
-<project ver="8" name="jppwebmgr" libEmbed="true" icon="res\LED.ico" ui="win" output="jppwebmgr.exe" CompanyName="单位名称" FileDescription="jppwebmgr" LegalCopyright="Copyright (C) 作者 2016" ProductName="jppwebmgr" InternalName="jppwebmgr" FileVersion="0.0.0.03" ProductVersion="0.0.0.03" publishDir="/Publish/">
+<project ver="8" name="jppwebmgr" libEmbed="true" icon="res\LED.ico" ui="win" output="jppwebmgr.exe" CompanyName="jpp" FileDescription="jppwebmgr" LegalCopyright="Copyright (C) 作者 2016" ProductName="jppwebmgr" InternalName="jppwebmgr" FileVersion="1.0.0.03" ProductVersion="1.0.0.03" publishDir="/Publish/">
 	<file name="main.aau" path="jppwebmgr.main.aau" comment="jppwebmgr.main.aau"/>
 	<folder name="资源文件" path="res" embed="true"/>
 </project>
