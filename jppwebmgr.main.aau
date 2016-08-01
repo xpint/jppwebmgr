@@ -500,7 +500,7 @@ startThreadReplySvr = function(){
 	//服务端
 	import zeromq
 	
-	var context = zeromq.context(20)
+	var context = zeromq.context(1)
 	
 	//replay模式socket与客户端的request模式配对使用
 	var responderStr = context.zmq_socket_reply()
@@ -535,8 +535,39 @@ startThreadReplySvr = function(){
     	*/
     	
     	var recMsgStr = request.getString() 
-    	ttab.recMsgStr51111 = recMsgStr
-    	..io.print ("服务端收到消息..checkList single:",request.getString() );
+    
+    	if ((recMsgStr != null) and (string.indexOf(recMsgStr, "getPrice-") > 0))
+    	{
+    		var inPrice = string.replace(recMsgStr, "getPrice-", "")
+    		var lastLowPrice = 0
+    		
+    		var priceTab = {}
+    		
+    		// inittab
+    		
+    		priceTab[inPrice] = 1
+    		
+    		insertFlag = "0"
+    		for(k,v in priceTab){
+    			if (k == inPrice){
+    				v = v + 1
+    				priceTab.k = v
+    			}
+    			else {
+    				insertFlag = "1"		
+    			}
+    		}
+    		
+    		if (insertFlag == "1") {
+    			priceTab.inPrice = 1	
+    		} 
+	
+    	}
+    	else {
+   			ttab.recMsgStr51111 = recMsgStr
+    		..io.print ("服务端收到消息..checkList single:",request.getString() ); 	
+    	}
+
     	request.close();
     	
     	try{

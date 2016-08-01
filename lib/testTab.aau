@@ -1,0 +1,95 @@
+
+namespace testTab{
+
+import io
+import string
+import table
+
+
+	..io.open()
+
+			recMsgStr = "getPrice-80200"
+			
+
+    		var inPrice = string.replace(recMsgStr, "getPrice-", "")
+    		var lastLowPrice = 80000
+    		var priceTab = {}
+    		
+    		
+    		// initPriceTab(lastLowPrice, nowTime, priceStep)  // cur last low  price , cur time , price will increase setp
+    		initPriceTab = function(lastLowPrice){
+   				for(i=1;10;1){
+    				lastLowPriceStr = tostring(lastLowPrice)
+    				priceTab[lastLowPriceStr]	= 0		
+    				lastLowPrice = lastLowPrice + 100
+    			}	
+    		
+    			for(k,v in priceTab){
+    				..io.print("init", k, v )
+    			} 			
+    		}
+    		initPriceTab(lastLowPrice)
+    		//initPriceTab(lastLowPrice, nowTime, priceStep)  // cur lastlow  price , cur time , price will increase setp
+
+    		// inittab
+    		
+    		//priceTab[inPrice] = 1
+    		
+    		//priceTab["81000"] = 0
+    		
+    		//priceTab["82000"] = 0
+    		
+    		//priceTab["80000"] = 0
+			
+			recvPrice = function(inPrice){
+				var insertFlag = "0"
+    			for(k,v in priceTab){
+    				
+    				if (k == inPrice){
+    					
+    					insertFlag = "0"
+    					v = v + 1
+    					priceTab[k] = v
+    					..io.print("deal recvPrice", k, v )
+    					break ;
+    				}
+    				else {
+    					insertFlag = "1"		
+    				}
+    			}
+    			
+    			if (insertFlag == "1") {
+    				priceTab[inPrice] = 1	
+    			} 
+    			
+    			
+    			for(k,v in priceTab){
+    				..io.print("after", k, v )
+    			}
+			
+			}
+			
+			replyPrice = function(){
+				
+			}
+			 
+			
+			recvPrice(inPrice)
+			recvPrice(inPrice)
+			recvPrice("80100")
+    		/*
+    		table.sort(priceTab, comProc)
+    		for(k,v in priceTab){
+    			..io.print("sort", k, v )
+    		}
+    		*/
+
+    		
+   			
+   			
+
+    		..io.print(priceTab)
+    		
+    		
+    		..io.stdin.read()
+}
